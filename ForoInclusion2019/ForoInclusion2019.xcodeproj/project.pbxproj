@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FBE7882B2241AE3A00EE5755 /* ViewControllerEventos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7882A2241AE3A00EE5755 /* ViewControllerEventos.swift */; };
+		FBE7882D2241AE4700EE5755 /* ViewControllerFavoritos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7882C2241AE4700EE5755 /* ViewControllerFavoritos.swift */; };
+		FBE7882F2241AE5600EE5755 /* ViewControllerDetalleEvento.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7882E2241AE5600EE5755 /* ViewControllerDetalleEvento.swift */; };
+		FBE788312241AE6500EE5755 /* ViewControllerFiltros.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE788302241AE6500EE5755 /* ViewControllerFiltros.swift */; };
+		FBE788332241AF2C00EE5755 /* TableViewCellEvento.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE788322241AF2C00EE5755 /* TableViewCellEvento.swift */; };
 		FBEC47662241A3C400784013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEC47652241A3C400784013 /* AppDelegate.swift */; };
 		FBEC47682241A3C400784013 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEC47672241A3C400784013 /* ViewController.swift */; };
 		FBEC476B2241A3C400784013 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBEC47692241A3C400784013 /* Main.storyboard */; };
@@ -15,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FBE7882A2241AE3A00EE5755 /* ViewControllerEventos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEventos.swift; sourceTree = "<group>"; };
+		FBE7882C2241AE4700EE5755 /* ViewControllerFavoritos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFavoritos.swift; sourceTree = "<group>"; };
+		FBE7882E2241AE5600EE5755 /* ViewControllerDetalleEvento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDetalleEvento.swift; sourceTree = "<group>"; };
+		FBE788302241AE6500EE5755 /* ViewControllerFiltros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFiltros.swift; sourceTree = "<group>"; };
+		FBE788322241AF2C00EE5755 /* TableViewCellEvento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellEvento.swift; sourceTree = "<group>"; };
 		FBEC47622241A3C400784013 /* ForoInclusion2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForoInclusion2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBEC47652241A3C400784013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBEC47672241A3C400784013 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +67,11 @@
 				FBEC47652241A3C400784013 /* AppDelegate.swift */,
 				FBEC47672241A3C400784013 /* ViewController.swift */,
 				FBEC47692241A3C400784013 /* Main.storyboard */,
+				FBE788322241AF2C00EE5755 /* TableViewCellEvento.swift */,
+				FBE7882A2241AE3A00EE5755 /* ViewControllerEventos.swift */,
+				FBE7882C2241AE4700EE5755 /* ViewControllerFavoritos.swift */,
+				FBE7882E2241AE5600EE5755 /* ViewControllerDetalleEvento.swift */,
+				FBE788302241AE6500EE5755 /* ViewControllerFiltros.swift */,
 				FBEC476C2241A3C500784013 /* Assets.xcassets */,
 				FBEC476E2241A3C500784013 /* LaunchScreen.storyboard */,
 				FBEC47712241A3C500784013 /* Info.plist */,
@@ -135,8 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE788312241AE6500EE5755 /* ViewControllerFiltros.swift in Sources */,
+				FBE7882D2241AE4700EE5755 /* ViewControllerFavoritos.swift in Sources */,
+				FBE7882F2241AE5600EE5755 /* ViewControllerDetalleEvento.swift in Sources */,
+				FBE788332241AF2C00EE5755 /* TableViewCellEvento.swift in Sources */,
 				FBEC47682241A3C400784013 /* ViewController.swift in Sources */,
 				FBEC47662241A3C400784013 /* AppDelegate.swift in Sources */,
+				FBE7882B2241AE3A00EE5755 /* ViewControllerEventos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
