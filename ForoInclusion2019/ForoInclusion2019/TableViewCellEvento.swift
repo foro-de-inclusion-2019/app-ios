@@ -9,7 +9,13 @@
 import UIKit
 
 class TableViewCellEvento: UITableViewCell {
-
+    
+    @IBOutlet weak var tfNombreEvento: UILabel!
+    @IBOutlet weak var tfDescripcion: UILabel!
+    @IBOutlet weak var tfAmbitosTipos: UILabel!
+    @IBOutlet weak var tfHora: UILabel!
+    @IBOutlet weak var imgFavorito: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,5 +26,8 @@ class TableViewCellEvento: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    @IBAction func btnFavorito(_ sender: UIButton) {
+        
+    }
 }

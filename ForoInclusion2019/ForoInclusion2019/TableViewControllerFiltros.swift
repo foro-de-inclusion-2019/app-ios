@@ -10,7 +10,6 @@ import UIKit
 
 class TableViewControllerFiltros: UITableViewController {
 
-    // Temporal... se usaran enums para identificar esto
     var ambitos = ["Social", "Laboral", "Salud", "Escolar"]
     var tipos = ["Auditiva", "Visual", "Psicosocial", "Motriz", "Intelectual"]
     
@@ -37,6 +36,10 @@ class TableViewControllerFiltros: UITableViewController {
         } else {
             return "Tipos de discapacidad"
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
