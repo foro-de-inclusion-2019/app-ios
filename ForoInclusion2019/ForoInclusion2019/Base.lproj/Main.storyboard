@@ -91,6 +91,9 @@
                                     <constraint firstAttribute="height" constant="50" id="88p-jW-zT1"/>
                                     <constraint firstAttribute="width" constant="50" id="HNR-Qc-GoT"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="activateHighContrast:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z9A-xY-sgP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dX5-8c-VFS">
                                 <rect key="frame" x="162.5" y="414" width="50" height="50"/>
@@ -98,6 +101,9 @@
                                     <constraint firstAttribute="height" constant="50" id="JO2-5m-Lu0"/>
                                     <constraint firstAttribute="width" constant="50" id="S4X-Zh-0vZ"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="activateVoiceOver:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xMs-c4-84q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4X-ap-NJc">
                                 <rect key="frame" x="242.5" y="414" width="50" height="50"/>
@@ -105,6 +111,9 @@
                                     <constraint firstAttribute="width" constant="50" id="m8l-5Q-F5Q"/>
                                     <constraint firstAttribute="height" constant="50" id="u36-gx-VrL"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="activateBigLetters:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tm9-rs-dJ8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
