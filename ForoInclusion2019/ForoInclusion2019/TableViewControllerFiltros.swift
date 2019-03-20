@@ -49,12 +49,12 @@ class TableViewControllerFiltros: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "celdaFiltro", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celdaFiltro", for: indexPath) as! TableViewCellFiltro
 
         if indexPath.section == 0 {
-            cell.textLabel?.text = ambitos[indexPath.row]
+            cell.tfFiltro.text = ambitos[indexPath.row]
         } else {
-            cell.textLabel?.text = tipos[indexPath.row]
+            cell.tfFiltro.text = tipos[indexPath.row]
         }
 
         return cell
