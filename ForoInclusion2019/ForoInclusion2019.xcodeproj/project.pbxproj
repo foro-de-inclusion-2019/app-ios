@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FBAF67772242D62B001153D0 /* TableViewControllerFiltros.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF67762242D62B001153D0 /* TableViewControllerFiltros.swift */; };
 		FBE7882B2241AE3A00EE5755 /* ViewControllerEventos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7882A2241AE3A00EE5755 /* ViewControllerEventos.swift */; };
 		FBE7882D2241AE4700EE5755 /* ViewControllerFavoritos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7882C2241AE4700EE5755 /* ViewControllerFavoritos.swift */; };
 		FBE7882F2241AE5600EE5755 /* ViewControllerDetalleEvento.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7882E2241AE5600EE5755 /* ViewControllerDetalleEvento.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FBAF67762242D62B001153D0 /* TableViewControllerFiltros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerFiltros.swift; sourceTree = "<group>"; };
 		FBE7882A2241AE3A00EE5755 /* ViewControllerEventos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEventos.swift; sourceTree = "<group>"; };
 		FBE7882C2241AE4700EE5755 /* ViewControllerFavoritos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFavoritos.swift; sourceTree = "<group>"; };
 		FBE7882E2241AE5600EE5755 /* ViewControllerDetalleEvento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDetalleEvento.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				FBEC47652241A3C400784013 /* AppDelegate.swift */,
 				FBEC47672241A3C400784013 /* ViewController.swift */,
 				FBEC47692241A3C400784013 /* Main.storyboard */,
+				FBAF67762242D62B001153D0 /* TableViewControllerFiltros.swift */,
 				FBE788322241AF2C00EE5755 /* TableViewCellEvento.swift */,
 				FBE7882A2241AE3A00EE5755 /* ViewControllerEventos.swift */,
 				FBE7882C2241AE4700EE5755 /* ViewControllerFavoritos.swift */,
@@ -152,6 +155,7 @@
 			files = (
 				FBE788312241AE6500EE5755 /* ViewControllerFiltros.swift in Sources */,
 				FBE7882D2241AE4700EE5755 /* ViewControllerFavoritos.swift in Sources */,
+				FBAF67772242D62B001153D0 /* TableViewControllerFiltros.swift in Sources */,
 				FBE7882F2241AE5600EE5755 /* ViewControllerDetalleEvento.swift in Sources */,
 				FBE788332241AF2C00EE5755 /* TableViewCellEvento.swift in Sources */,
 				FBEC47682241A3C400784013 /* ViewController.swift in Sources */,
