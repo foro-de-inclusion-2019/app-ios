@@ -10,4 +10,19 @@ import UIKit
 
 class dataBase: NSObject {
 
+    override init(){
+        //Connect to DB
+        super.init()
+        connectToDB()
+    }
+    
+    
+    func connectToDB() {
+        //TODO: Connect with firebase
+    }
+    
+    
+    func retrieveJSON(){
+        //TODO: Query to retrieve data from database
+    }
 }
