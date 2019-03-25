@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     /* Leftmost button is clicked */
     @IBAction func activateHighContrast(_ sender: Any) {
         
-        showAlert(functionality: "Alto contraste")
+        showAlert(functionality: "Aumentar el contraste")
     
     }
 
