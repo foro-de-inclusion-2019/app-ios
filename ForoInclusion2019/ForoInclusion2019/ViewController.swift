@@ -20,9 +20,9 @@ class ViewController: UIViewController {
      */
     func showAlert( functionality: String ){
         
-        let alertController = UIAlertController (title: functionality, message: "Go to Settings > General > " + functionality, preferredStyle: .alert)
+        let alertController = UIAlertController (title: functionality, message: "Ir a Configuración > General > " + functionality, preferredStyle: .alert)
         
-        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+        let settingsAction = UIAlertAction(title: "Configuración", style: .default) { (_) -> Void in
             
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
                 return
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
             }
         }
         alertController.addAction(settingsAction)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
         alertController.addAction(cancelAction)
         
         present(alertController, animated: true, completion: nil)
@@ -45,21 +45,21 @@ class ViewController: UIViewController {
     /* Leftmost button is clicked */
     @IBAction func activateHighContrast(_ sender: Any) {
         
-        showAlert(functionality: "Increase Contrast")
+        showAlert(functionality: "Alto contraste")
     
     }
 
     /* Middle button is clicked */
     @IBAction func activateVoiceOver(_ sender: Any) {
         
-        showAlert(functionality: "Speech")
+        showAlert(functionality: "Voice over")
         
     }
     
     /* Rightmost button is clicked */
     @IBAction func activateBigLetters(_ sender: Any) {
     
-        showAlert(functionality: "Larger Text")
+        showAlert(functionality: "Texto Grande")
     
     }
 }
