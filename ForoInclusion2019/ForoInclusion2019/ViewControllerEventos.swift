@@ -29,10 +29,15 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         
         cell.tfNombreEvento.text = "Nombre evento"
         
+        cell.isUserInteractionEnabled = true
+        
         return cell
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
