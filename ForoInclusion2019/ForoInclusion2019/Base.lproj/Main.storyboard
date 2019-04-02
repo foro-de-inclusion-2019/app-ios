@@ -223,6 +223,7 @@
                                             <outlet property="tfDescripcion" destination="QgK-Vn-EYO" id="Qpe-3c-hRa"/>
                                             <outlet property="tfHora" destination="nvC-6b-1Pw" id="1qZ-Ao-W1Q"/>
                                             <outlet property="tfNombreEvento" destination="hU3-cL-taC" id="ioL-qd-FtH"/>
+                                            <segue destination="3ch-6e-uFx" kind="show" id="7rj-Pt-ixm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -607,4 +608,7 @@
         <image name="person" width="37.5" height="37.5"/>
         <image name="tipoD" width="37.5" height="37.5"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7rj-Pt-ixm"/>
+    </inferredMetricsTieBreakers>
 </document>
