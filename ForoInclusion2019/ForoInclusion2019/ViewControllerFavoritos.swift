@@ -10,6 +10,8 @@ import UIKit
 
 class ViewControllerFavoritos: UIViewController {
 
+    var favoritos: [Evento]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

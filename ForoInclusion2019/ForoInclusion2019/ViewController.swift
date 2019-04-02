@@ -10,10 +10,36 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var eventos: [Evento]!
+    var favoritos: [Evento]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Temporalmente llenar los arreglos eventos y favoritos con datos dummy
+        
+        let evento1 = Evento(nombre: "Panel", description: "Panel sobre bla bla bla", fecha: "20/05/09", hora: "16:00")
+        let evento2 = Evento(nombre: "Conferencia", description: "Conferencia sobre bla bla bla", fecha: "20/05/09", hora: "16:00")
+        
+        evento1.ambitos.append(Ambito.Escolar)
+        
+        eventos = [evento1, evento2]
+        favoritos = [evento1]
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "eventos" {
+            let vistaEventos = segue.destination as! ViewControllerEventos
+            vistaEventos.eventos = eventos
+        } else {
+            let vistaFavoritos = segue.destination as! ViewControllerFavoritos
+            vistaFavoritos.favoritos = favoritos
+        }
+    }
+    
+    // MARK: - Accesibility
     
     /*
      * Method which receives a functionality name and appends it to alert, showing the path in which you can activate it.
@@ -44,7 +70,7 @@ class ViewController: UIViewController {
 
     /* Leftmost button is clicked */
     @IBAction func activateHighContrast(_ sender: Any) {
-        
+
         showAlert(functionality: "Aumentar el contraste")
     
     }

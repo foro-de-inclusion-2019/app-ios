@@ -10,6 +10,8 @@ import UIKit
 
 class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var eventos: [Evento]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +19,7 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return eventos.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -26,10 +28,9 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celdaEvento", for: indexPath) as! TableViewCellEvento
+        let evento = eventos[indexPath.row]
         
-        cell.tfNombreEvento.text = "Nombre evento"
-        
-        cell.isUserInteractionEnabled = true
+        cell.tfNombreEvento.text = evento.nombre
         
         return cell
     }

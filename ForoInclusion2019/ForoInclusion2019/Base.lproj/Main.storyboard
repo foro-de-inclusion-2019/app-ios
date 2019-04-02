@@ -52,7 +52,7 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Ver eventos"/>
                                 <connections>
-                                    <segue destination="Ua3-gL-VHN" kind="show" id="uUe-w8-teG"/>
+                                    <segue destination="Ua3-gL-VHN" kind="show" identifier="eventos" id="uUe-w8-teG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1B4-Xh-L0N">
@@ -60,7 +60,7 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Favoritos"/>
                                 <connections>
-                                    <segue destination="fhR-QH-b0T" kind="show" id="LUy-qo-mk0"/>
+                                    <segue destination="fhR-QH-b0T" kind="show" identifier="favoritos" id="LUy-qo-mk0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ckb-lR-KAZ">
@@ -609,6 +609,6 @@
         <image name="tipoD" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7rj-Pt-ixm"/>
+        <segue reference="wNn-Ha-mZe"/>
     </inferredMetricsTieBreakers>
 </document>
