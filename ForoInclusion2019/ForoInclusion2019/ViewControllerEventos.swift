@@ -8,18 +8,42 @@
 
 import UIKit
 
-class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableViewDelegate, actualizaFiltros {
     
-    var eventos: [Evento]!
+    @IBOutlet weak var tablaEventos: UITableView!
+    
+    var filtroAmbito = Ambito.allCases
+    var filtroTipo = TipoDiscapacidad.allCases
+    
+    var eventos = [Evento]()
+    var eventosFiltrados = [Evento]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        filtrar()
+    }
+    
+    func filtrar() {
+        eventosFiltrados = [Evento]()
+        for evento in eventos {
+            for ambito in evento.ambitos {
+                if filtroAmbito.contains(ambito) {
+                    eventosFiltrados.append(evento)
+                    break
+                }
+            }
+            for tipo in evento.tiposDiscapacidad {
+                if filtroTipo.contains(tipo) {
+                    eventosFiltrados.append(evento)
+                    break
+                }
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return eventos.count
+        return eventosFiltrados.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -28,25 +52,41 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celdaEvento", for: indexPath) as! TableViewCellEvento
-        let evento = eventos[indexPath.row]
+        let evento = eventosFiltrados[indexPath.row]
         
         cell.tfNombreEvento.text = evento.nombre
+        cell.tfDescripcion.text = evento.tipo
+        cell.tfHora.text = evento.hora
+        
+        var ambitosTipos = ""
+        for tipo in evento.tiposDiscapacidad {
+            ambitosTipos += tipo.rawValue + ", "
+        }
+        for ambito in evento.ambitos {
+            ambitosTipos += ambito.rawValue + ", "
+        }
+        if (!ambitosTipos.isEmpty) {
+            ambitosTipos = String(ambitosTipos.dropLast(2))
+        }
+        cell.tfAmbitosTipos.text = ambitosTipos
         
         return cell
     }
     
+    func actualizarFiltros(ambitos: [Ambito], tipos: [TipoDiscapacidad]) {
+        filtroAmbito = ambitos
+        filtroTipo = tipos
+        filtrar()
+        tablaEventos.reloadData()
+    }
+
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "filtros" {
+            let vistaFiltros = segue.destination as! TableViewControllerFiltros
+            vistaFiltros.delegado = self
+        }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

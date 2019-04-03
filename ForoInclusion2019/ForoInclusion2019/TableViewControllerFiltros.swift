@@ -8,10 +8,18 @@
 
 import UIKit
 
-class TableViewControllerFiltros: UITableViewController {
+protocol actualizaFiltros {
+    func actualizarFiltros(ambitos: [Ambito], tipos: [TipoDiscapacidad])
+}
 
-    var ambitos = ["Social", "Laboral", "Salud", "Escolar"]
-    var tipos = ["Auditiva", "Visual", "Psicosocial", "Motriz", "Intelectual"]
+class TableViewControllerFiltros: UITableViewController {
+    
+    let alertaFiltros = UIAlertController(title: "No hay filtros", message: "No se seleccionaron filtros", preferredStyle: .alert)
+
+    var delegado: actualizaFiltros!
+    
+    var ambitos = Ambito.allCases
+    var tipos = TipoDiscapacidad.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +27,12 @@ class TableViewControllerFiltros: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        let btnAplicar = UIBarButtonItem(title: "Aplicar", style: .done, target: nil, action: nil)
+        let btnAplicar = UIBarButtonItem(title: "Aplicar", style: .done, target: self, action: #selector(actualizar))
+        
         self.navigationItem.rightBarButtonItem = btnAplicar
+        
+        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertaFiltros.addAction(ok)
     }
 
     // MARK: - Table view data source
@@ -55,14 +67,47 @@ class TableViewControllerFiltros: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celdaFiltro", for: indexPath) as! TableViewCellFiltro
 
         if indexPath.section == 0 {
-            cell.tfFiltro.text = ambitos[indexPath.row]
+            cell.tfFiltro.text = ambitos[indexPath.row].rawValue
         } else {
-            cell.tfFiltro.text = tipos[indexPath.row]
+            cell.tfFiltro.text = tipos[indexPath.row].rawValue
         }
 
         return cell
     }
 
+    @objc func actualizar() {
+        
+        var ambitos = [Ambito]()
+        var tipos = [TipoDiscapacidad]()
+        
+        let indexes = tableView.indexPathsForVisibleRows!
+        
+        for index in indexes {
+            let cell = tableView.cellForRow(at: index) as! TableViewCellFiltro
+            
+            if index.section == 0 {
+                if cell.isOn {
+                    let ambito = Ambito.init(rawValue: cell.tfFiltro.text!)!
+                    ambitos.append(ambito)
+                }
+            } else {
+                if cell.isOn {
+                    let tipo = TipoDiscapacidad.init(rawValue: cell.tfFiltro.text!)!
+                    tipos.append(tipo)
+                }
+            }
+        }
+        
+        delegado.actualizarFiltros(ambitos: ambitos, tipos: tipos)
+        
+        if ambitos.isEmpty && tipos.isEmpty {
+            present(alertaFiltros, animated: true, completion: nil)
+            return
+        }
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

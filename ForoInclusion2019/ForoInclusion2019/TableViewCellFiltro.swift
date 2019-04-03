@@ -12,7 +12,7 @@ class TableViewCellFiltro: UITableViewCell {
 
     @IBOutlet weak var tfFiltro: UILabel!
     
-    var on = false
+    var isOn = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,9 +27,9 @@ class TableViewCellFiltro: UITableViewCell {
 
     @IBAction func switched(_ sender: UISwitch) {
         if sender.isOn {
-            on = true
+            isOn = true
         } else {
-            on = false
+            isOn = false
         }
     }
 }
