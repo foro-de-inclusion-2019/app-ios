@@ -26,23 +26,17 @@ enum TipoDiscapacidad : String, CaseIterable {
 class Evento: NSObject {
     
     var nombre: String
-    var participantes: String
-    var tipo: String
-    var lugar: String
+    var participantes: String!
+    var tipo: String!
+    var lugar: String!
     var fecha: String
-    var hora: String
-    var ambitos: [Ambito]
-    var tiposDiscapacidad: [TipoDiscapacidad]
+    var hora: String!
+    var ambitos = [Ambito]()
+    var tiposDiscapacidad = [TipoDiscapacidad]()
     
     override init() {
         nombre = ""
-        participantes = ""
-        tipo = ""
-        lugar = ""
         fecha = ""
-        hora = ""
-        ambitos = [Ambito]()
-        tiposDiscapacidad = [TipoDiscapacidad]()
         super.init()
     }
     

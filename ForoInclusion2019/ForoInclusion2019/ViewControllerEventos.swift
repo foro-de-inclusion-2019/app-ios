@@ -55,8 +55,18 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         let evento = eventosFiltrados[indexPath.row]
         
         cell.tfNombreEvento.text = evento.nombre
-        cell.tfDescripcion.text = evento.tipo
-        cell.tfHora.text = evento.hora
+        
+        if evento.tipo != nil {
+            cell.tfDescripcion.text = evento.tipo
+        } else {
+            cell.tfDescripcion.text = "Tipo por definir"
+        }
+        
+        if evento.hora != nil {
+            cell.tfHora.text = evento.hora
+        } else {
+            cell.tfHora.text = "ND"
+        }
         
         var ambitosTipos = ""
         for tipo in evento.tiposDiscapacidad {
@@ -86,6 +96,13 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         if segue.identifier == "filtros" {
             let vistaFiltros = segue.destination as! TableViewControllerFiltros
             vistaFiltros.delegado = self
+        } else {
+            let celda = sender as! TableViewCellEvento
+            let index = tablaEventos.indexPath(for: celda)?.row
+            let evento = eventos[index!]
+            let vistaDetalle = segue.destination as! ViewControllerDetalleEvento
+            vistaDetalle.evento = evento
+            vistaDetalle.favSelected = !celda.favSelected
         }
     }
     

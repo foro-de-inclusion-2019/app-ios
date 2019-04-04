@@ -16,15 +16,12 @@ class TableViewCellEvento: UITableViewCell {
     @IBOutlet weak var tfHora: UILabel!
     @IBOutlet weak var imgFavorito: UIImageView!
     
-    var fotoFavorito: UIImage!
-    var fotoFavoritoSelected: UIImage!
+    let fotoFavorito = UIImage(named: "Fav")
+    let fotoFavoritoSelected = UIImage(named: "FavBold")
     var favSelected: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        fotoFavorito = UIImage(named: "Fav")
-        fotoFavoritoSelected = UIImage(named: "FavBold")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
