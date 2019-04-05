@@ -77,8 +77,8 @@ class TableViewControllerFiltros: UITableViewController {
 
     @objc func actualizar() {
         
-        var ambitos = [Ambito]()
-        var tipos = [TipoDiscapacidad]()
+        ambitos = [Ambito]()
+        tipos = [TipoDiscapacidad]()
         
         let indexes = tableView.indexPathsForVisibleRows!
         
@@ -98,12 +98,12 @@ class TableViewControllerFiltros: UITableViewController {
             }
         }
         
-        delegado.actualizarFiltros(ambitos: ambitos, tipos: tipos)
-        
         if ambitos.isEmpty && tipos.isEmpty {
             present(alertaFiltros, animated: true, completion: nil)
             return
         }
+        
+        delegado.actualizarFiltros(ambitos: ambitos, tipos: tipos)
         
         navigationController?.popViewController(animated: true)
     }
