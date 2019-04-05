@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, cambiaFavorito {
 
     var eventos: [Evento]!
     var favoritos: [Evento]!
@@ -39,15 +39,28 @@ class ViewController: UIViewController {
         favoritos = [evento1]
     }
     
+    // MARK: - Protocol cambiaFavorito
+    
+    func agregaFavorito(evento: Evento) {
+        favoritos.append(evento)
+    }
+    
+    func eliminaFavorito(evento: Evento) {
+        favoritos.remove(at: favoritos.firstIndex(of: evento)!)
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "eventos" {
             let vistaEventos = segue.destination as! ViewControllerEventos
             vistaEventos.eventos = eventos
+            vistaEventos.favoritos = favoritos
+            vistaEventos.delegado = self
         } else {
             let vistaFavoritos = segue.destination as! ViewControllerFavoritos
             vistaFavoritos.favoritos = favoritos
+            vistaFavoritos.delegado = self
         }
     }
     

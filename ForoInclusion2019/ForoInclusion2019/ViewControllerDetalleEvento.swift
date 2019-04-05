@@ -16,6 +16,8 @@ class ViewControllerDetalleEvento: UIViewController, UITableViewDataSource, UITa
     
     var celdas = [UITableViewCell]()
     
+    var cellEvento = TableViewCellEvento()
+    
     var evento: Evento!
     var favSelected: Bool!
     
@@ -24,6 +26,8 @@ class ViewControllerDetalleEvento: UIViewController, UITableViewDataSource, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        evento = cellEvento.evento
         
         tfNombre.text = evento.nombre
         
@@ -42,6 +46,7 @@ class ViewControllerDetalleEvento: UIViewController, UITableViewDataSource, UITa
     
     @IBAction func clickFavorito(_ sender: UIButton) {
         switchFavorito()
+        cellEvento.switchFavorito()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
