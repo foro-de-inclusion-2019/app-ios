@@ -14,15 +14,25 @@ class ViewControllerDetalleEvento: UIViewController, UITableViewDataSource, UITa
     @IBOutlet weak var imgFavorito: UIImageView!
     @IBOutlet weak var btnFavorito: UIButton!
     
+    @IBOutlet weak var tablaGuadiana: UITableView!
+    
     var celdas = [UITableViewCell]()
     
     var cellEvento = TableViewCellEvento()
+    
+    var cellSize : CGFloat = 20
     
     var evento: Evento!
     var favSelected: Bool!
     
     let fotoFavorito = UIImage(named: "Fav")
     let fotoFavoritoSelected = UIImage(named: "FavBold")
+    
+    let app = UIApplication.shared
+    
+    @objc func reload(){
+        tablaGuadiana.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +42,10 @@ class ViewControllerDetalleEvento: UIViewController, UITableViewDataSource, UITa
         tfNombre.text = evento.nombre
         
         switchFavorito()
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: UIApplication.didBecomeActiveNotification, object: app)
+        
     }
     
     func switchFavorito() {
@@ -57,6 +71,16 @@ class ViewControllerDetalleEvento: UIViewController, UITableViewDataSource, UITa
         let cellAmbitosTipos = UITableViewCell()
         
         var count = 0
+        
+        // Give capacity of 3 lines to each label
+        cellTipo.textLabel?.numberOfLines = 3
+        cellParticipantes.textLabel?.numberOfLines = 3
+        cellFecha.textLabel?.numberOfLines = 3
+        cellLugar.textLabel?.numberOfLines = 3
+        cellAmbitosTipos.textLabel?.numberOfLines = 3
+        
+        // Actualizar tamaño de celda en base al tamaño de la letra
+        //cellSize = tfNombre.font.capHeight
         
         if evento.tipo != nil {
             cellTipo.textLabel?.text = evento.tipo
@@ -121,7 +145,7 @@ class ViewControllerDetalleEvento: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        return cellSize * 1.2
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

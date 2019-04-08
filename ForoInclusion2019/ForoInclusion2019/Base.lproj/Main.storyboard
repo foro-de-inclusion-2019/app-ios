@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mEZ-ZW-lZH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mEZ-ZW-lZH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -185,8 +185,8 @@
                                                         <action selector="clickFavorito:" destination="hVZ-IV-MTF" eventType="touchUpInside" id="Qbd-eJ-h8g"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRT-v2-6xC">
-                                                    <rect key="frame" x="75" y="10" width="300" height="32.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nombre" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRT-v2-6xC">
+                                                    <rect key="frame" x="75" y="10" width="280" height="32.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -223,7 +223,7 @@
                                                 <constraint firstItem="GRT-v2-6xC" firstAttribute="leading" secondItem="cbi-ck-BNr" secondAttribute="trailing" constant="20" id="bls-K5-QOk"/>
                                                 <constraint firstItem="Hde-uD-kSg" firstAttribute="leading" secondItem="47v-yy-fea" secondAttribute="leadingMargin" id="cTZ-1D-wDz"/>
                                                 <constraint firstItem="cbi-ck-BNr" firstAttribute="centerY" secondItem="47v-yy-fea" secondAttribute="centerY" id="ftX-Vx-is4"/>
-                                                <constraint firstAttribute="trailing" secondItem="GRT-v2-6xC" secondAttribute="trailing" id="gLz-b8-SgB"/>
+                                                <constraint firstAttribute="trailing" secondItem="GRT-v2-6xC" secondAttribute="trailing" constant="20" id="gLz-b8-SgB"/>
                                                 <constraint firstAttribute="trailing" secondItem="vdS-i2-x5W" secondAttribute="trailing" constant="20" id="n0E-aE-K34"/>
                                                 <constraint firstItem="LvM-iV-DfE" firstAttribute="top" secondItem="GRT-v2-6xC" secondAttribute="bottom" constant="10" id="wIi-Sk-Sq7"/>
                                                 <constraint firstItem="GRT-v2-6xC" firstAttribute="top" secondItem="47v-yy-fea" secondAttribute="top" constant="10" id="xNr-hP-vZe"/>
@@ -274,8 +274,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4C-OA-iaF">
-                                <rect key="frame" x="20" y="84" width="275" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Nombre" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4C-OA-iaF">
+                                <rect key="frame" x="20" y="40" width="275" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="VnP-eS-Wgd"/>
                                 </constraints>
@@ -284,14 +284,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fav" translatesAutoresizingMaskIntoConstraints="NO" id="0qT-dt-IOi">
-                                <rect key="frame" x="315" y="84" width="40" height="40"/>
+                                <rect key="frame" x="315" y="40" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GUB-5w-m79"/>
                                     <constraint firstAttribute="width" constant="40" id="sSy-ce-k71"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-sl-wIT">
-                                <rect key="frame" x="315" y="84" width="40" height="40"/>
+                                <rect key="frame" x="315" y="40" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="AZW-2I-FuC"/>
                                     <constraint firstAttribute="width" constant="40" id="aUC-uV-2Hm"/>
@@ -303,8 +303,8 @@
                                     <action selector="clickFavorito:" destination="3ch-6e-uFx" eventType="touchUpInside" id="6t3-71-lu9"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h0q-1w-vgB">
-                                <rect key="frame" x="0.0" y="144" width="375" height="523"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h0q-1w-vgB">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detalle" id="wNb-Uf-glR">
@@ -341,6 +341,7 @@
                     <connections>
                         <outlet property="btnFavorito" destination="4CK-sl-wIT" id="djE-vX-OB2"/>
                         <outlet property="imgFavorito" destination="0qT-dt-IOi" id="Uzq-TZ-xQI"/>
+                        <outlet property="tablaGuadiana" destination="h0q-1w-vgB" id="czi-iM-O62"/>
                         <outlet property="tfNombre" destination="G4C-OA-iaF" id="DCV-hD-scG"/>
                     </connections>
                 </viewController>
@@ -419,8 +420,8 @@
                                                         <action selector="clickFavorito:" destination="v8k-JT-FO5" eventType="touchUpInside" id="qMt-mN-Uc0"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fa3-FH-UXQ">
-                                                    <rect key="frame" x="75" y="10" width="300" height="32.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Nombre" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fa3-FH-UXQ">
+                                                    <rect key="frame" x="75" y="10" width="280" height="32.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -452,7 +453,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="Tev-5L-JtU" secondAttribute="bottom" constant="10" id="Bkv-ML-gOS"/>
                                                 <constraint firstItem="jp8-9k-C0r" firstAttribute="leading" secondItem="CIn-RE-cML" secondAttribute="trailing" constant="20" id="Iem-zm-oZM"/>
                                                 <constraint firstAttribute="trailing" secondItem="Tev-5L-JtU" secondAttribute="trailing" constant="20" id="L9B-bz-ebn"/>
-                                                <constraint firstAttribute="trailing" secondItem="Fa3-FH-UXQ" secondAttribute="trailing" id="LUC-dI-upC"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fa3-FH-UXQ" secondAttribute="trailing" constant="20" id="LUC-dI-upC"/>
                                                 <constraint firstItem="Fa3-FH-UXQ" firstAttribute="top" secondItem="V57-sN-Btq" secondAttribute="top" constant="10" id="Qvk-j8-mEE"/>
                                                 <constraint firstItem="Fa3-FH-UXQ" firstAttribute="leading" secondItem="CIn-RE-cML" secondAttribute="trailing" constant="20" id="Rfr-Rl-a4n"/>
                                                 <constraint firstItem="cHr-C4-aCO" firstAttribute="centerY" secondItem="V57-sN-Btq" secondAttribute="centerY" id="cZP-b0-2zl"/>
@@ -557,14 +558,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Alto Contraste" width="37.5" height="37.5"/>
-        <image name="Fav" width="37.5" height="37.5"/>
-        <image name="Letra Grande" width="37.5" height="37.5"/>
-        <image name="Voice Over" width="37.5" height="37.5"/>
+        <image name="Alto Contraste" width="50" height="50"/>
+        <image name="Fav" width="50" height="50"/>
+        <image name="Letra Grande" width="50" height="50"/>
+        <image name="Voice Over" width="50" height="50"/>
         <image name="logo" width="375" height="117"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KfQ-eH-yQG"/>
-        <segue reference="wNn-Ha-mZe"/>
+        <segue reference="clS-rh-2d3"/>
     </inferredMetricsTieBreakers>
 </document>
