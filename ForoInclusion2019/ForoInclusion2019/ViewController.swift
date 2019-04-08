@@ -22,7 +22,7 @@ class ViewController: UIViewController, cambiaFavorito {
         evento1.participantes = "Juan Perez, Martha Sanchez"
         evento1.tipo = "Conferencia"
         evento1.lugar = "Centro de congresos, sala 2"
-        evento1.fecha = "21 de abril"
+        evento1.fecha = "22 de abril"
         evento1.hora = "12:30"
         evento1.ambitos.append(Ambito.Escolar)
         
@@ -35,7 +35,16 @@ class ViewController: UIViewController, cambiaFavorito {
         evento2.hora = "14:30"
         evento2.ambitos.append(Ambito.Escolar)
         
-        eventos = [evento1, evento2]
+        let evento3 = Evento()
+        evento3.nombre = "Panel"
+        evento3.participantes = "Samuel Pacheco"
+        evento3.tipo = "Panel"
+        evento3.lugar = "Centro de congresos, sala 3"
+        evento3.fecha = "23 de abril"
+        evento3.hora = "14:30"
+        evento3.ambitos.append(Ambito.Escolar)
+        
+        eventos = [evento1, evento2, evento3]
         favoritos = [evento1]
     }
     
@@ -57,10 +66,15 @@ class ViewController: UIViewController, cambiaFavorito {
             vistaEventos.eventos = eventos
             vistaEventos.favoritos = favoritos
             vistaEventos.delegado = self
+            vistaEventos.isfav = false
         } else {
-            let vistaFavoritos = segue.destination as! ViewControllerFavoritos
+            let vistaFavoritos = segue.destination as! ViewControllerEventos
+            vistaFavoritos.eventos = favoritos
             vistaFavoritos.favoritos = favoritos
             vistaFavoritos.delegado = self
+            vistaFavoritos.isfav = true
+            vistaFavoritos.title="Favoritos"
+            //vistaEventos.isfav = false
         }
     }
     

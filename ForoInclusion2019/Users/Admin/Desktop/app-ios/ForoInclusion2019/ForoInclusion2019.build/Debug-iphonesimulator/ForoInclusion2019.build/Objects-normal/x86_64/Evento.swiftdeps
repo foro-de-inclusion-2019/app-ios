@@ -1,0 +1,395 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "Ambito"
+- "TipoDiscapacidad"
+- "CodingKeys"
+- "Evento"
+provides-nominal:
+- "17ForoInclusion20196AmbitoO"
+- "17ForoInclusion201916TipoDiscapacidadO"
+- "17ForoInclusion201910CodingKeysO"
+- "17ForoInclusion20196EventoC"
+provides-member:
+- ["17ForoInclusion20196AmbitoO", ""]
+- ["17ForoInclusion201916TipoDiscapacidadO", ""]
+- ["17ForoInclusion201910CodingKeysO", ""]
+- ["17ForoInclusion20196EventoC", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "=="
+- "Ambito"
+- "AssignmentPrecedence"
+- "CaseIterable"
+- "CodingKey"
+- "CodingKeys"
+- "Decodable"
+- "Evento"
+- !private "FloatLiteralType"
+- "Int"
+- !private "IntegerLiteralType"
+- "NSObject"
+- "String"
+- "StringLiteralType"
+- "TipoDiscapacidad"
+- !private "_findStringSwitchCase"
+- !private "~="
+depends-member:
+- ["17ForoInclusion20196AmbitoO", "=="]
+- ["17ForoInclusion20196AmbitoO", "AllCases"]
+- ["17ForoInclusion20196AmbitoO", "Escolar"]
+- ["17ForoInclusion20196AmbitoO", "Laboral"]
+- ["17ForoInclusion20196AmbitoO", "RawValue"]
+- ["17ForoInclusion20196AmbitoO", "Salud"]
+- ["17ForoInclusion20196AmbitoO", "Social"]
+- ["17ForoInclusion20196AmbitoO", "_Default_AllCases"]
+- ["17ForoInclusion20196AmbitoO", "_Default_RawValue"]
+- !private ["17ForoInclusion20196AmbitoO", "_findStringSwitchCase"]
+- ["17ForoInclusion20196AmbitoO", "_rawHashValue"]
+- ["17ForoInclusion20196AmbitoO", "allCases"]
+- ["17ForoInclusion20196AmbitoO", "debugDescription"]
+- ["17ForoInclusion20196AmbitoO", "deinit"]
+- ["17ForoInclusion20196AmbitoO", "description"]
+- ["17ForoInclusion20196AmbitoO", "hash"]
+- ["17ForoInclusion20196AmbitoO", "hashValue"]
+- ["17ForoInclusion20196AmbitoO", "init"]
+- !private ["17ForoInclusion20196AmbitoO", "init"]
+- ["17ForoInclusion20196AmbitoO", "intValue"]
+- ["17ForoInclusion20196AmbitoO", "rawValue"]
+- ["17ForoInclusion20196AmbitoO", "stringValue"]
+- ["Sa", "init"]
+- ["SK", "init"]
+- ["s7CVarArgP", "Ambito"]
+- !private ["s7CVarArgP", "Dia"]
+- ["s7CVarArgP", "TipoDiscapacidad"]
+- ["s7CVarArgP", ""]
+- !private ["s7CVarArgP", "fecha"]
+- ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "nombre"]
+- ["s12CaseIterableP", "=="]
+- ["s12CaseIterableP", "AllCases"]
+- ["s12CaseIterableP", "RawValue"]
+- ["s12CaseIterableP", ""]
+- ["s12CaseIterableP", "_Default_AllCases"]
+- ["s12CaseIterableP", "_Default_RawValue"]
+- !private ["s12CaseIterableP", "_findStringSwitchCase"]
+- ["s12CaseIterableP", "_rawHashValue"]
+- ["s12CaseIterableP", "allCases"]
+- ["s12CaseIterableP", "debugDescription"]
+- ["s12CaseIterableP", "description"]
+- ["s12CaseIterableP", "hash"]
+- ["s12CaseIterableP", "hashValue"]
+- ["s12CaseIterableP", "init"]
+- !private ["s12CaseIterableP", "init"]
+- ["s12CaseIterableP", "intValue"]
+- ["s12CaseIterableP", "rawValue"]
+- ["s12CaseIterableP", "stringValue"]
+- ["s9CodingKeyP", "=="]
+- ["s9CodingKeyP", "AllCases"]
+- ["s9CodingKeyP", "RawValue"]
+- ["s9CodingKeyP", ""]
+- ["s9CodingKeyP", "_Default_AllCases"]
+- ["s9CodingKeyP", "_Default_RawValue"]
+- !private ["s9CodingKeyP", "_findStringSwitchCase"]
+- ["s9CodingKeyP", "_rawHashValue"]
+- ["s9CodingKeyP", "allCases"]
+- ["s9CodingKeyP", "debugDescription"]
+- ["s9CodingKeyP", "description"]
+- ["s9CodingKeyP", "hash"]
+- ["s9CodingKeyP", "hashValue"]
+- ["s9CodingKeyP", "init"]
+- !private ["s9CodingKeyP", "init"]
+- ["s9CodingKeyP", "intValue"]
+- ["s9CodingKeyP", "rawValue"]
+- ["s9CodingKeyP", "stringValue"]
+- ["17ForoInclusion201910CodingKeysO", "=="]
+- ["17ForoInclusion201910CodingKeysO", "Dia"]
+- ["17ForoInclusion201910CodingKeysO", "RawValue"]
+- ["17ForoInclusion201910CodingKeysO", "_Default_RawValue"]
+- !private ["17ForoInclusion201910CodingKeysO", "_findStringSwitchCase"]
+- ["17ForoInclusion201910CodingKeysO", "_rawHashValue"]
+- ["17ForoInclusion201910CodingKeysO", "ambitos"]
+- ["17ForoInclusion201910CodingKeysO", "debugDescription"]
+- ["17ForoInclusion201910CodingKeysO", "deinit"]
+- ["17ForoInclusion201910CodingKeysO", "description"]
+- ["17ForoInclusion201910CodingKeysO", "fecha"]
+- ["17ForoInclusion201910CodingKeysO", "hash"]
+- ["17ForoInclusion201910CodingKeysO", "hashValue"]
+- ["17ForoInclusion201910CodingKeysO", "hora"]
+- ["17ForoInclusion201910CodingKeysO", "init"]
+- !private ["17ForoInclusion201910CodingKeysO", "init"]
+- ["17ForoInclusion201910CodingKeysO", "intValue"]
+- ["17ForoInclusion201910CodingKeysO", "lugar"]
+- ["17ForoInclusion201910CodingKeysO", "nombre"]
+- ["17ForoInclusion201910CodingKeysO", "participantes"]
+- ["17ForoInclusion201910CodingKeysO", "rawValue"]
+- ["17ForoInclusion201910CodingKeysO", "stringValue"]
+- ["17ForoInclusion201910CodingKeysO", "tipo"]
+- ["17ForoInclusion201910CodingKeysO", "tiposDiscapacidad"]
+- ["Sl", "init"]
+- ["10Foundation15ContiguousBytesP", "init"]
+- ["s28CustomDebugStringConvertibleP", "=="]
+- ["s28CustomDebugStringConvertibleP", "AllCases"]
+- ["s28CustomDebugStringConvertibleP", "Ambito"]
+- !private ["s28CustomDebugStringConvertibleP", "Dia"]
+- ["s28CustomDebugStringConvertibleP", "RawValue"]
+- ["s28CustomDebugStringConvertibleP", "TipoDiscapacidad"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- ["s28CustomDebugStringConvertibleP", "_Default_AllCases"]
+- ["s28CustomDebugStringConvertibleP", "_Default_RawValue"]
+- !private ["s28CustomDebugStringConvertibleP", "_findStringSwitchCase"]
+- ["s28CustomDebugStringConvertibleP", "_rawHashValue"]
+- ["s28CustomDebugStringConvertibleP", "allCases"]
+- ["s28CustomDebugStringConvertibleP", "debugDescription"]
+- ["s28CustomDebugStringConvertibleP", "description"]
+- !private ["s28CustomDebugStringConvertibleP", "fecha"]
+- ["s28CustomDebugStringConvertibleP", "hash"]
+- ["s28CustomDebugStringConvertibleP", "hashValue"]
+- ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- ["s28CustomDebugStringConvertibleP", "intValue"]
+- !private ["s28CustomDebugStringConvertibleP", "nombre"]
+- ["s28CustomDebugStringConvertibleP", "rawValue"]
+- ["s28CustomDebugStringConvertibleP", "stringValue"]
+- ["s17CustomReflectableP", "init"]
+- ["s23CustomStringConvertibleP", "=="]
+- ["s23CustomStringConvertibleP", "AllCases"]
+- ["s23CustomStringConvertibleP", "Ambito"]
+- !private ["s23CustomStringConvertibleP", "Dia"]
+- ["s23CustomStringConvertibleP", "RawValue"]
+- ["s23CustomStringConvertibleP", "TipoDiscapacidad"]
+- ["s23CustomStringConvertibleP", ""]
+- ["s23CustomStringConvertibleP", "_Default_AllCases"]
+- ["s23CustomStringConvertibleP", "_Default_RawValue"]
+- !private ["s23CustomStringConvertibleP", "_findStringSwitchCase"]
+- ["s23CustomStringConvertibleP", "_rawHashValue"]
+- ["s23CustomStringConvertibleP", "allCases"]
+- ["s23CustomStringConvertibleP", "debugDescription"]
+- ["s23CustomStringConvertibleP", "description"]
+- !private ["s23CustomStringConvertibleP", "fecha"]
+- ["s23CustomStringConvertibleP", "hash"]
+- ["s23CustomStringConvertibleP", "hashValue"]
+- ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- ["s23CustomStringConvertibleP", "intValue"]
+- !private ["s23CustomStringConvertibleP", "nombre"]
+- ["s23CustomStringConvertibleP", "rawValue"]
+- ["s23CustomStringConvertibleP", "stringValue"]
+- ["10Foundation12DataProtocolP", "init"]
+- ["Se", "=="]
+- ["Se", "AllCases"]
+- ["Se", "RawValue"]
+- ["Se", ""]
+- ["Se", "_Default_AllCases"]
+- ["Se", "_Default_RawValue"]
+- !private ["Se", "_findStringSwitchCase"]
+- ["Se", "_rawHashValue"]
+- ["Se", "allCases"]
+- ["Se", "debugDescription"]
+- ["Se", "description"]
+- ["Se", "hash"]
+- ["Se", "hashValue"]
+- ["Se", "init"]
+- !private ["Se", "init"]
+- ["Se", "intValue"]
+- ["Se", "rawValue"]
+- ["Se", "stringValue"]
+- ["SE", "init"]
+- ["SQ", "=="]
+- ["SQ", "AllCases"]
+- ["SQ", "Ambito"]
+- !private ["SQ", "Dia"]
+- ["SQ", "RawValue"]
+- ["SQ", "TipoDiscapacidad"]
+- ["SQ", ""]
+- ["SQ", "_Default_AllCases"]
+- ["SQ", "_Default_RawValue"]
+- !private ["SQ", "_findStringSwitchCase"]
+- ["SQ", "_rawHashValue"]
+- ["SQ", "allCases"]
+- ["SQ", "debugDescription"]
+- ["SQ", "description"]
+- !private ["SQ", "fecha"]
+- ["SQ", "hash"]
+- ["SQ", "hashValue"]
+- ["SQ", "init"]
+- !private ["SQ", "init"]
+- ["SQ", "intValue"]
+- !private ["SQ", "nombre"]
+- ["SQ", "rawValue"]
+- ["SQ", "stringValue"]
+- ["17ForoInclusion20196EventoC", "Ambito"]
+- ["17ForoInclusion20196EventoC", "Dia"]
+- ["17ForoInclusion20196EventoC", "Int"]
+- ["17ForoInclusion20196EventoC", "String"]
+- ["17ForoInclusion20196EventoC", "TipoDiscapacidad"]
+- ["17ForoInclusion20196EventoC", "ambitos"]
+- ["17ForoInclusion20196EventoC", "deinit"]
+- ["17ForoInclusion20196EventoC", "fecha"]
+- ["17ForoInclusion20196EventoC", "hora"]
+- ["17ForoInclusion20196EventoC", "init"]
+- ["17ForoInclusion20196EventoC", "lugar"]
+- ["17ForoInclusion20196EventoC", "nombre"]
+- ["17ForoInclusion20196EventoC", "participantes"]
+- ["17ForoInclusion20196EventoC", "tipo"]
+- ["17ForoInclusion20196EventoC", "tiposDiscapacidad"]
+- ["s25ExpressibleByArrayLiteralP", "init"]
+- ["SH", "=="]
+- ["SH", "AllCases"]
+- ["SH", "Ambito"]
+- !private ["SH", "Dia"]
+- ["SH", "RawValue"]
+- ["SH", "TipoDiscapacidad"]
+- ["SH", ""]
+- ["SH", "_Default_AllCases"]
+- ["SH", "_Default_RawValue"]
+- !private ["SH", "_findStringSwitchCase"]
+- ["SH", "_rawHashValue"]
+- ["SH", "allCases"]
+- ["SH", "debugDescription"]
+- ["SH", "description"]
+- !private ["SH", "fecha"]
+- ["SH", "hash"]
+- ["SH", "hashValue"]
+- ["SH", "init"]
+- !private ["SH", "init"]
+- ["SH", "intValue"]
+- !private ["SH", "nombre"]
+- ["SH", "rawValue"]
+- ["SH", "stringValue"]
+- ["SM", "init"]
+- ["10Foundation19MutableDataProtocolP", "init"]
+- ["So8NSObjectC", "Ambito"]
+- ["So8NSObjectC", "Dia"]
+- ["So8NSObjectC", "Int"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "TipoDiscapacidad"]
+- ["So8NSObjectC", ""]
+- ["So8NSObjectC", "ambitos"]
+- ["So8NSObjectC", "fecha"]
+- ["So8NSObjectC", "hora"]
+- ["So8NSObjectC", "init"]
+- ["So8NSObjectC", "lugar"]
+- ["So8NSObjectC", "nombre"]
+- ["So8NSObjectC", "participantes"]
+- ["So8NSObjectC", "tipo"]
+- ["So8NSObjectC", "tiposDiscapacidad"]
+- ["So8NSObjectP", "Ambito"]
+- !private ["So8NSObjectP", "Dia"]
+- ["So8NSObjectP", "TipoDiscapacidad"]
+- ["So8NSObjectP", ""]
+- !private ["So8NSObjectP", "fecha"]
+- !private ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "nombre"]
+- ["Sk", "init"]
+- ["Sm", "init"]
+- ["SY", "=="]
+- ["SY", "AllCases"]
+- ["SY", "RawValue"]
+- ["SY", ""]
+- ["SY", "_Default_AllCases"]
+- ["SY", "_Default_RawValue"]
+- !private ["SY", "_findStringSwitchCase"]
+- ["SY", "_rawHashValue"]
+- ["SY", "allCases"]
+- ["SY", "debugDescription"]
+- ["SY", "description"]
+- ["SY", "hash"]
+- ["SY", "hashValue"]
+- ["SY", "init"]
+- !private ["SY", "init"]
+- ["SY", "intValue"]
+- ["SY", "rawValue"]
+- ["SY", "stringValue"]
+- ["ST", "init"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "=="]
+- ["17ForoInclusion201916TipoDiscapacidadO", "AllCases"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "Auditiva"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "Intelectual"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "Motriz"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "Psicosocial"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "RawValue"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "Visual"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "_Default_AllCases"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "_Default_RawValue"]
+- !private ["17ForoInclusion201916TipoDiscapacidadO", "_findStringSwitchCase"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "_rawHashValue"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "allCases"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "deinit"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "hash"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "hashValue"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "init"]
+- ["17ForoInclusion201916TipoDiscapacidadO", "rawValue"]
+- ["s14_ArrayProtocolP", "init"]
+- ["s24_DestructorSafeContainerP", "init"]
+- ["s19_HasContiguousBytesP", "init"]
+- ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "Ambito"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Dia"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "TipoDiscapacidad"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "fecha"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "nombre"]
+- ["s21_ObjectiveCBridgeableP", "init"]
+depends-nominal:
+- "17ForoInclusion20196AmbitoO"
+- "Sa"
+- "SK"
+- "s7CVarArgP"
+- "s12CaseIterableP"
+- "s9CodingKeyP"
+- "17ForoInclusion201910CodingKeysO"
+- "Sl"
+- "10Foundation15ContiguousBytesP"
+- "s28CustomDebugStringConvertibleP"
+- "s17CustomReflectableP"
+- "s23CustomStringConvertibleP"
+- "10Foundation12DataProtocolP"
+- "Se"
+- "SE"
+- "SQ"
+- "17ForoInclusion20196EventoC"
+- "s25ExpressibleByArrayLiteralP"
+- "SH"
+- "SM"
+- "10Foundation19MutableDataProtocolP"
+- "So8NSObjectC"
+- "So8NSObjectP"
+- "Sk"
+- "Sm"
+- "SY"
+- "ST"
+- "17ForoInclusion201916TipoDiscapacidadO"
+- "s14_ArrayProtocolP"
+- "s24_DestructorSafeContainerP"
+- "s19_HasContiguousBytesP"
+- "s35_HasCustomAnyHashableRepresentationP"
+- "10Foundation27_KeyValueCodingAndObservingP"
+- "s21_ObjectiveCBridgeableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.2.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.2.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.2.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.2.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.2.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator12.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
+interface-hash: "4ef933897c886b3d5b38e46434f6b81c"

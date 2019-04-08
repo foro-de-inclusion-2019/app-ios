@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mEZ-ZW-lZH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mEZ-ZW-lZH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,7 +60,7 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Favoritos"/>
                                 <connections>
-                                    <segue destination="fhR-QH-b0T" kind="show" identifier="favoritos" id="LUy-qo-mk0"/>
+                                    <segue destination="Ua3-gL-VHN" kind="show" identifier="favoritos" id="KfQ-eH-yQG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ckb-lR-KAZ">
@@ -134,8 +134,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="90Z-0Q-jBb">
-                                <rect key="frame" x="50" y="84" width="275" height="31"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="90Z-0Q-jBb">
+                                <rect key="frame" x="50" y="83" width="275" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9bG-RY-JZC"/>
                                 </constraints>
@@ -145,9 +145,12 @@
                                     <segment title="Día 3"/>
                                     <segment title="Por definir"/>
                                 </segments>
+                                <connections>
+                                    <action selector="filtroDia:" destination="fhR-QH-b0T" eventType="valueChanged" id="Rdo-Df-0T9"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y1C-Lf-5SG">
-                                <rect key="frame" x="0.0" y="134" width="375" height="533"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="577"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="celdaEvento" rowHeight="115" id="hVZ-IV-MTF" customClass="TableViewCellEvento" customModule="ForoInclusion2019" customModuleProvider="target">
@@ -255,6 +258,7 @@
                         <viewLayoutGuide key="safeArea" id="Qzt-0x-ARm"/>
                     </view>
                     <connections>
+                        <outlet property="dias_filtro" destination="90Z-0Q-jBb" id="QCn-hR-VaX"/>
                         <outlet property="tablaEventos" destination="Y1C-Lf-5SG" id="99l-hg-pWX"/>
                     </connections>
                 </viewController>
@@ -271,7 +275,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4C-OA-iaF">
-                                <rect key="frame" x="20" y="84" width="275" height="40"/>
+                                <rect key="frame" x="20" y="40" width="275" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="VnP-eS-Wgd"/>
                                 </constraints>
@@ -280,14 +284,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fav" translatesAutoresizingMaskIntoConstraints="NO" id="0qT-dt-IOi">
-                                <rect key="frame" x="315" y="84" width="40" height="40"/>
+                                <rect key="frame" x="315" y="40" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GUB-5w-m79"/>
                                     <constraint firstAttribute="width" constant="40" id="sSy-ce-k71"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-sl-wIT">
-                                <rect key="frame" x="315" y="84" width="40" height="40"/>
+                                <rect key="frame" x="315" y="40" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="AZW-2I-FuC"/>
                                     <constraint firstAttribute="width" constant="40" id="aUC-uV-2Hm"/>
@@ -300,7 +304,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h0q-1w-vgB">
-                                <rect key="frame" x="0.0" y="144" width="375" height="523"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detalle" id="wNb-Uf-glR">
@@ -363,6 +367,9 @@
                                             <segment title="Día 3"/>
                                             <segment title="Por definir" width="70"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="filtroDia:" destination="Ua3-gL-VHN" eventType="valueChanged" id="jPD-Ei-gSP"/>
+                                        </connections>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPy-hG-gB9">
                                         <rect key="frame" x="292" y="0.0" width="43" height="30"/>
@@ -485,6 +492,7 @@
                         <viewLayoutGuide key="safeArea" id="Pve-ep-wkx"/>
                     </view>
                     <connections>
+                        <outlet property="dias_filtro" destination="gUN-f7-ApQ" id="7ls-hr-JNP"/>
                         <outlet property="tablaEventos" destination="1pd-2z-hcp" id="LKn-FM-5TZ"/>
                     </connections>
                 </viewController>
@@ -549,13 +557,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Alto Contraste" width="37.5" height="37.5"/>
-        <image name="Fav" width="37.5" height="37.5"/>
-        <image name="Letra Grande" width="37.5" height="37.5"/>
-        <image name="Voice Over" width="37.5" height="37.5"/>
+        <image name="Alto Contraste" width="50" height="50"/>
+        <image name="Fav" width="50" height="50"/>
+        <image name="Letra Grande" width="50" height="50"/>
+        <image name="Voice Over" width="50" height="50"/>
         <image name="logo" width="375" height="117"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wNn-Ha-mZe"/>
+        <segue reference="KfQ-eH-yQG"/>
+        <segue reference="clS-rh-2d3"/>
     </inferredMetricsTieBreakers>
 </document>

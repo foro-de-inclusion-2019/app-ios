@@ -8,14 +8,14 @@
 
 import UIKit
 
-enum Ambito : String, CaseIterable {
+enum Ambito : String, CaseIterable, Decodable, CodingKey {
     case Social = "Social"
     case Laboral = "Laboral"
     case Salud = "Salud"
     case Escolar = "Escolar"
 }
 
-enum TipoDiscapacidad : String, CaseIterable {
+enum TipoDiscapacidad : String, CaseIterable, Decodable {
     case Visual = "Visual"
     case Auditiva = "Auditiva"
     case Psicosocial = "Psicosocial"
@@ -23,8 +23,56 @@ enum TipoDiscapacidad : String, CaseIterable {
     case Intelectual = "Intelectual"
 }
 
+
+enum CodingKeys: String, CodingKey{
+    case nombre
+    case participantes
+    case tipo
+    case lugar
+    case fecha
+    case hora
+    case ambitos
+    case tiposDiscapacidad
+    case Dia
+}
+
+
+
+
 class Evento: NSObject {
-    
+//
+//
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//        try container.encode(nombre, forKey: .nombre)
+//        try container.encode(participantes, forKey: .participantes)
+//        try container.encode(tipo, forKey: .tipo)
+//        try container.encode(lugar, forKey: .lugar)
+//        try container.encode(fecha, forKey: .fecha)
+//        try container.encode(hora, forKey: .hora)
+//        try container.encode(Dia, forKey: .Dia)
+//
+//
+//
+//
+//
+//
+//
+//        //try container.encode(ambitos, forKey: .ambitos)
+//
+//        //Ambitos
+//
+//
+//
+//        //Tipos de disapacidad
+//
+//    }
+//
+//
+//    required init(from decoder: Decoder) throws {
+//
+//    }
+//
     var nombre: String
     var participantes: String!
     var tipo: String!
@@ -33,10 +81,12 @@ class Evento: NSObject {
     var hora: String!
     var ambitos = [Ambito]()
     var tiposDiscapacidad = [TipoDiscapacidad]()
+    var Dia: Int
     
     override init() {
         nombre = ""
         fecha = ""
+        Dia = -1
         super.init()
     }
     
