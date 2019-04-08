@@ -23,6 +23,8 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     //Dia a filtrar
     var dia: Int!
     
+    var cellHeight : CGFloat = 30
+    
     var delegado: cambiaFavorito!
     
     
@@ -113,7 +115,7 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
             }
         }
         
-}
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,13 +140,14 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         
         calculateDays()
         filtrar(day: dia)
-        //Empiezan en el evento 0 (Dia 1)
+        
     }
+        //Empiezan en el evento 0 (Dia 1)
     
-    
-    
-    
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        tablaEventos.reloadData()
+    }
     
     func filtrar(day: Int) {
         eventosFiltrados = [Evento]()
@@ -178,7 +181,7 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return cellHeight * 10.0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -187,6 +190,9 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         let isFavorito = favoritos.contains(evento)
         
         cell.load(evento: evento, delegado: self, isFavorito: isFavorito)
+        
+        // getSize of title and update global cellHeight var
+        cellHeight = cell.getFontSize()
         
         return cell
     }

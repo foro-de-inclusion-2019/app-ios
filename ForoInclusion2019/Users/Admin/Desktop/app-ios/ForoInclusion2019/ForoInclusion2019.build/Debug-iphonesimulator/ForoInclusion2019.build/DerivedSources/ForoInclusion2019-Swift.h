@@ -294,6 +294,7 @@ SWIFT_CLASS("_TtC17ForoInclusion201921ViewControllerEventos")
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tablaEventos;
 @property (nonatomic, weak) IBOutlet UISegmentedControl * _Null_unspecified dias_filtro;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
@@ -309,6 +310,7 @@ SWIFT_CLASS("_TtC17ForoInclusion201923ViewControllerFavoritos")
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified tablaEventos;
 @property (nonatomic, weak) IBOutlet UISegmentedControl * _Null_unspecified dias_filtro;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;

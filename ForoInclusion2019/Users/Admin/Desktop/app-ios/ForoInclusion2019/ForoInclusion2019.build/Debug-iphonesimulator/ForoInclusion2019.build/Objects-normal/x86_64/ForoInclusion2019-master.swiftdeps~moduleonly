@@ -1,15 +1,15 @@
 version: "Apple Swift version 5.0 (swiftlang-1001.0.69.5 clang-1001.0.46.3)"
 options: "6f71d9ff7711d1b780a2df1ba3084c5a"
-build_time: [1554706543, 347734000]
+build_time: [1554706747, 204638000]
 inputs:
   "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/Objects/Evento.swift": [1554706481, 681865862]
   "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/dataBase/dataBase.swift": [1554695015, 581159460]
-  "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/ViewControllerFavoritos.swift": [1554703054, 341378247]
+  "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/ViewControllerFavoritos.swift": [1554706587, 767592262]
   "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/TableViewControllerFiltros.swift": [1554695015, 578622827]
   "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/TableViewCellFiltro.swift": [1554695015, 578345669]
   "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/ViewControllerDetalleEvento.swift": [1554695015, 579614503]
-  "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/TableViewCellEvento.swift": [1554695015, 578097722]
+  "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/TableViewCellEvento.swift": [1554706587, 762303948]
   "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/dataBase/dbmodel.swift": [1554695015, 581434197]
   "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/ViewController.swift": [1554706543, 267269781]
   "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/AppDelegate.swift": [1553231269, 910991963]
-  "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/ViewControllerEventos.swift": [1554706506, 769418385]
+  "/Users/Admin/Desktop/app-ios/ForoInclusion2019/ForoInclusion2019/ViewControllerEventos.swift": [1554706747, 151741528]

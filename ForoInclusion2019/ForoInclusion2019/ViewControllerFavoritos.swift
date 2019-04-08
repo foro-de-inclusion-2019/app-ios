@@ -15,6 +15,8 @@ class ViewControllerFavoritos: UIViewController, UITableViewDataSource, UITableV
     var filtroAmbito = Ambito.allCases
     var filtroTipo = TipoDiscapacidad.allCases
     
+    var cellHeight : CGFloat = 30
+    
     var favoritos: [Evento]!
     var delegado: cambiaFavorito!
     var dia: Int!
@@ -144,13 +146,17 @@ class ViewControllerFavoritos: UIViewController, UITableViewDataSource, UITableV
         return currentDate
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tablaEventos.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(favoritos)
         return favoritos.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return cellHeight * 10.0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -158,6 +164,9 @@ class ViewControllerFavoritos: UIViewController, UITableViewDataSource, UITableV
         let evento = favoritos[indexPath.row]
         
         cell.load(evento: evento, delegado: self, isFavorito: true)
+        
+        // getSize of title and update global cellHeight var
+        cellHeight = cell.getFontSize()
         
         return cell
     }
