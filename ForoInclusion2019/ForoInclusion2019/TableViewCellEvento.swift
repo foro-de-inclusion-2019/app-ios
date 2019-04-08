@@ -50,6 +50,11 @@ class TableViewCellEvento: UITableViewCell {
         }
     }
     
+    // Regresa fontSize del titulo de la celda
+    func getFontSize() -> CGFloat{
+        return tfNombreEvento.font.capHeight
+    }
+    
     @IBAction func clickFavorito(_ sender: UIButton) {
         switchFavorito()
     }
