@@ -19,18 +19,12 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     var favoritos = [Evento]()
     var eventosFiltrados = [Evento]()
     
-    var cellHeight : CGFloat = 30
-    
     var delegado: cambiaFavorito!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         filtrar()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        tablaEventos.reloadData()
     }
     
     func filtrar() {
@@ -56,7 +50,7 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeight * 10.0
+        return 120
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,9 +59,6 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         let isFavorito = favoritos.contains(evento)
         
         cell.load(evento: evento, delegado: self, isFavorito: isFavorito)
-        
-        // getSize of title and update global cellHeight var
-        cellHeight = cell.getFontSize()
         
         return cell
     }
