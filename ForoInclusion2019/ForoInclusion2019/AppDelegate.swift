@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         let db = Database.database().reference()
-        db.setValue("Aaron was here")
+        //db.setValue("Aaron was here")
         return true
     }
 
@@ -47,4 +47,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
