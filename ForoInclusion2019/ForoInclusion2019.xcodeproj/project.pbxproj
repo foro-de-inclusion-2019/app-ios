@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C8880CAD860155C7BD26901 /* Pods_ForoInclusion2019.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0EA0D3D7E6BA861C35BCBB /* Pods_ForoInclusion2019.framework */; };
 		843640912244A75400DDCA73 /* dataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436408F2244A75400DDCA73 /* dataBase.swift */; };
 		843640922244A75400DDCA73 /* dbmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843640902244A75400DDCA73 /* dbmodel.swift */; };
 		843640942244A80300DDCA73 /* Evento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843640932244A80300DDCA73 /* Evento.swift */; };
+		FBAF0AE12270DCF40024EF25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBAF0AE02270DCF40024EF25 /* GoogleService-Info.plist */; };
 		FBAF67772242D62B001153D0 /* TableViewControllerFiltros.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF67762242D62B001153D0 /* TableViewControllerFiltros.swift */; };
 		FBAF67792242E626001153D0 /* TableViewCellFiltro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF67782242E626001153D0 /* TableViewCellFiltro.swift */; };
 		FBE7882B2241AE3A00EE5755 /* ViewControllerEventos.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7882A2241AE3A00EE5755 /* ViewControllerEventos.swift */; };
@@ -24,9 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B0EA0D3D7E6BA861C35BCBB /* Pods_ForoInclusion2019.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForoInclusion2019.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		825186203706E7D4A9E6CCE2 /* Pods-ForoInclusion2019.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForoInclusion2019.release.xcconfig"; path = "Target Support Files/Pods-ForoInclusion2019/Pods-ForoInclusion2019.release.xcconfig"; sourceTree = "<group>"; };
 		8436408F2244A75400DDCA73 /* dataBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataBase.swift; sourceTree = "<group>"; };
 		843640902244A75400DDCA73 /* dbmodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dbmodel.swift; sourceTree = "<group>"; };
 		843640932244A80300DDCA73 /* Evento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evento.swift; sourceTree = "<group>"; };
+		EE811C7D3D0EC9C12D443A7B /* Pods-ForoInclusion2019.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForoInclusion2019.debug.xcconfig"; path = "Target Support Files/Pods-ForoInclusion2019/Pods-ForoInclusion2019.debug.xcconfig"; sourceTree = "<group>"; };
+		FBAF0AE02270DCF40024EF25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FBAF67762242D62B001153D0 /* TableViewControllerFiltros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerFiltros.swift; sourceTree = "<group>"; };
 		FBAF67782242E626001153D0 /* TableViewCellFiltro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellFiltro.swift; sourceTree = "<group>"; };
 		FBE7882A2241AE3A00EE5755 /* ViewControllerEventos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEventos.swift; sourceTree = "<group>"; };
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C8880CAD860155C7BD26901 /* Pods_ForoInclusion2019.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,11 +77,30 @@
 			path = Objects;
 			sourceTree = "<group>";
 		};
+		C40F9D0B86D4D9A1428C6E46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B0EA0D3D7E6BA861C35BCBB /* Pods_ForoInclusion2019.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F07886751F7C28C9B7B87E31 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE811C7D3D0EC9C12D443A7B /* Pods-ForoInclusion2019.debug.xcconfig */,
+				825186203706E7D4A9E6CCE2 /* Pods-ForoInclusion2019.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FBEC47592241A3C400784013 = {
 			isa = PBXGroup;
 			children = (
 				FBEC47642241A3C400784013 /* ForoInclusion2019 */,
 				FBEC47632241A3C400784013 /* Products */,
+				F07886751F7C28C9B7B87E31 /* Pods */,
+				C40F9D0B86D4D9A1428C6E46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +129,7 @@
 				FBEC476C2241A3C500784013 /* Assets.xcassets */,
 				FBEC476E2241A3C500784013 /* LaunchScreen.storyboard */,
 				FBEC47712241A3C500784013 /* Info.plist */,
+				FBAF0AE02270DCF40024EF25 /* GoogleService-Info.plist */,
 			);
 			path = ForoInclusion2019;
 			sourceTree = "<group>";
@@ -114,9 +141,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBEC47742241A3C500784013 /* Build configuration list for PBXNativeTarget "ForoInclusion2019" */;
 			buildPhases = (
+				6D5BB751CD8F0B88E619F746 /* [CP] Check Pods Manifest.lock */,
 				FBEC475E2241A3C400784013 /* Sources */,
 				FBEC475F2241A3C400784013 /* Frameworks */,
 				FBEC47602241A3C400784013 /* Resources */,
+				818F2F197EF782E3FD3C230B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,12 +195,66 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBEC47702241A3C500784013 /* LaunchScreen.storyboard in Resources */,
+				FBAF0AE12270DCF40024EF25 /* GoogleService-Info.plist in Resources */,
 				FBEC476D2241A3C500784013 /* Assets.xcassets in Resources */,
 				FBEC476B2241A3C400784013 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D5BB751CD8F0B88E619F746 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ForoInclusion2019-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		818F2F197EF782E3FD3C230B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ForoInclusion2019/Pods-ForoInclusion2019-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ForoInclusion2019/Pods-ForoInclusion2019-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FBEC475E2241A3C400784013 /* Sources */ = {
@@ -332,6 +415,7 @@
 		};
 		FBEC47752241A3C500784013 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE811C7D3D0EC9C12D443A7B /* Pods-ForoInclusion2019.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -341,7 +425,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ITESM.ForoInclusion2019;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appForo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,6 +434,7 @@
 		};
 		FBEC47762241A3C500784013 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 825186203706E7D4A9E6CCE2 /* Pods-ForoInclusion2019.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -359,7 +444,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ITESM.ForoInclusion2019;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appForo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
