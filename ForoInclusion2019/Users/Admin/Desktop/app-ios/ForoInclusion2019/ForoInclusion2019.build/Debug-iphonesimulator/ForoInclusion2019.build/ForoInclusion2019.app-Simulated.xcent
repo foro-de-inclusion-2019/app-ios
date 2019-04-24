@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>V6E93Q5Y8C.ITESM.ForoInclusion2019</string>
+	<string>SRYL52NXFC.ITESM.ForoInclusion2019-2</string>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>V6E93Q5Y8C.ITESM.ForoInclusion2019</string>
+		<string>SRYL52NXFC.ITESM.ForoInclusion2019-2</string>
 	</array>
 </dict>
 </plist>
