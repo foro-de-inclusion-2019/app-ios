@@ -73,14 +73,14 @@ class Evento: NSObject {
 //
 //    }
 //
-    var nombre: String
-    var participantes: String!
-    var tipo: String!
-    var lugar: String!
-    var fecha: String
-    var hora: String!
-    var ambitos = [Ambito]()
-    var tiposDiscapacidad = [TipoDiscapacidad]()
+    var nombre: String // String
+    var participantes: String! // Array String
+    var tipo: String! // String
+    var lugar: String! // String
+    var fecha: String // String
+    var hora: String! // String
+    var ambitos = [Ambito]() // Array String
+    var tiposDiscapacidad = [TipoDiscapacidad]() // Array String
     var Dia: Int
     
     override init() {
@@ -103,4 +103,5 @@ class Evento: NSObject {
         super.init()
     }
     */
+    
 }
