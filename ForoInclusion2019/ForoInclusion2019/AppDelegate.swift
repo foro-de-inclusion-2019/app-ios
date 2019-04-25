@@ -13,13 +13,49 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var events = [Evento]()
 
-
+    // Receives events dictionary and stores it in global var
+    func saveEventsToVariable( tmpEvents: NSDictionary ) {
+        
+        for event in tmpEvents {
+            // TO-DO
+            // Sacar cada variable del evento y enviarlo al constructor, como se especifica en clase Evento
+            print("TEST")
+            print(event)
+            
+        }
+        
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         FirebaseApp.configure()
+        
+        // Get database reference
         let db = Database.database().reference()
-        //db.setValue("Aaron was here")
+        
+        print("DB REFERENCE: ")
+        print(db)
+        
+        // Access database events from db reference
+        db.child("eventos").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            // Get events
+            let events = snapshot.value as? NSDictionary
+            print("Events dictionary: ")
+            print(events ?? "")
+            
+            // Store them in variable, aborts execution if events is nil (! at the end and self. does that)
+            self.saveEventsToVariable(tmpEvents: events!)
+            
+        }) { (error) in // Catch error, and print it
+            
+            print(error.localizedDescription)
+        }
+        
+        
         return true
     }
 
