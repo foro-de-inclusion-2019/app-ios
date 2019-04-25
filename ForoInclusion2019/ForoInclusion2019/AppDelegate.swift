@@ -17,9 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
         FirebaseApp.configure()
+        
+        // Get database reference
         let db = Database.database().reference()
-        //db.setValue("Aaron was here")
+        
+        print("DB REFERENCE: ")
+        print(db)
+        
+        // Access database events from db reference
+        db.child("eventos").observeSingleEvent(of: .value) { (snapshot) in
+            
+            // Get events
+            let events = snapshot.value as? NSDictionary
+            print("Events dictionary: ")
+            print(events ?? "")
+        }
+        
         return true
     }
 
