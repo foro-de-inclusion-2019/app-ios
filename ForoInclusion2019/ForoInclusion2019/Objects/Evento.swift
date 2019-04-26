@@ -74,34 +74,38 @@ class Evento: NSObject {
 //    }
 //
     var nombre: String // String
-    var participantes: String! // Array String
-    var tipo: String! // String
-    var lugar: String! // String
+    var participantes: String? // Array String
+    var tipo: String? // String
+    var lugar: String? // String
     var fecha: String // String
-    var hora: String! // String
+    var hora: String? // String
     var ambitos = [Ambito]() // Array String
     var tiposDiscapacidad = [TipoDiscapacidad]() // Array String
-    var Dia: Int
+    var dia: Int
     
     override init() {
         nombre = ""
         fecha = ""
-        Dia = -1
+        dia = -1
         super.init()
     }
     
-    /*
-    init(nombre: String, description: String, fecha: String, hora: String) {
+    init(nombre: String, participantes: String?, tipo: String?, lugar: String?, fecha: String, hora: String?, ambitos: [String], tiposDiscapacidad: [String], dia: Int) {
         self.nombre = nombre
+        self.participantes = participantes
+        self.tipo = tipo
+        self.lugar = lugar
         self.fecha = fecha
         self.hora = hora
-        participantes = ""
-        tipo = ""
-        lugar = ""
-        ambitos = [Ambito]()
-        tiposDiscapacidad = [TipoDiscapacidad]()
-        super.init()
+        self.dia = dia
+        
+        for ambito in ambitos {
+            self.ambitos.append(Ambito(rawValue: ambito)!)
+        }
+        
+        for tipo in tiposDiscapacidad {
+            self.tiposDiscapacidad.append(TipoDiscapacidad(rawValue: tipo)!)
+        }
     }
-    */
     
 }

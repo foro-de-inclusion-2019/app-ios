@@ -48,7 +48,7 @@ class ViewControllerFavoritos: UIViewController, UITableViewDataSource, UITableV
         }
         var Aux = [Evento]()
         for evento in favoritos {
-            if evento.Dia == dia {
+            if evento.dia == dia {
                 Aux.append(evento)
             }
         }
@@ -124,10 +124,10 @@ class ViewControllerFavoritos: UIViewController, UITableViewDataSource, UITableV
         
         allFechas = auxFechas
         for ev in favoritos{
-            if ev.Dia == -1 {
+            if ev.dia == -1 {
                 for i in 0..<allFechas.count{
                     if formater.date(from: getDate(ev: ev)) == allFechas[i] {
-                        ev.Dia = i
+                        ev.dia = i
                         break;
                     }
                 }

@@ -105,10 +105,10 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         
         allFechas = auxFechas
         for ev in eventos{
-            if ev.Dia == -1 {
+            if ev.dia == -1 {
                 for i in 0..<allFechas.count{
                     if formater.date(from: getDate(ev: ev)) == allFechas[i] {
-                        ev.Dia = i
+                        ev.dia = i
                         break;
                     }
                 }
@@ -167,7 +167,7 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         }
         var Aux = [Evento]()
         for evento in eventosFiltrados {
-            if evento.Dia == dia{
+            if evento.dia == dia{
                 Aux.append(evento)
             }
         }
