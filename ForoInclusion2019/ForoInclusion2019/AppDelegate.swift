@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // Get response elements
             let ambitos = notProcessedEvent["ambito"] as? String ?? ""
-            let discapacidades = notProcessedEvent["discapidad"] as? String ?? ""
+            let discapacidades = notProcessedEvent["discapacidad"] as? String ?? ""
             let nombreEvento = notProcessedEvent["evento"] as? String ?? ""
             let fecha = notProcessedEvent["fecha"] as? String ?? ""
             let horario = notProcessedEvent["horario"] as? String ?? ""
