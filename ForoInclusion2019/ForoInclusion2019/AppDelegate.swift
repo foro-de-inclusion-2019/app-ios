@@ -14,27 +14,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var events = [Evento]()
+    
+    // Function that returns day number of given date separated by "-"
+    func getDia(fecha: String) -> Int {
+    
+        if( fecha.isEmpty ) {
+            return 0;
+        }
+        
+        let arrayFechaNumbers = fecha.components(separatedBy: "-")
+        let dia = Int(arrayFechaNumbers[1]) ?? 0
+        
+        return dia
+        
+    }
 
     // Receives events dictionary and stores it in global var
     func saveEventsToVariable( tmpEvents: NSDictionary ) {
         
         let eventKeys = tmpEvents.allKeys as! [String]
+        var eventCounter = 0
         
         for key in eventKeys {
             
             let notProcessedEvent = tmpEvents[key] as! NSDictionary
             
-            let ambito = notProcessedEvent["ambito"] as? String ?? ""
-            let discapacidad = notProcessedEvent["discapacidad"] as? String ?? ""
+            // Get response elements
+            let ambitos = notProcessedEvent["ambito"] as? String ?? ""
+            let discapacidades = notProcessedEvent["discapidad"] as? String ?? ""
             let nombreEvento = notProcessedEvent["evento"] as? String ?? ""
             let fecha = notProcessedEvent["fecha"] as? String ?? ""
             let horario = notProcessedEvent["horario"] as? String ?? ""
             let lugar = notProcessedEvent["lugar"] as? String ?? ""
             let participantes = notProcessedEvent["participantes"] as? String ?? ""
-            let tipoEventos = notProcessedEvent["tipoEventos"] as? String ?? ""
+            let tipoEvento = notProcessedEvent["tipoEventos"] as? String ?? ""
             
-            print(ambito, discapacidad, nombreEvento, fecha, horario, lugar, participantes, tipoEventos)
+            // OJO, aqui checar si estará separado por "comma" o por "comma + espacio"
+            // Get special arrays
+            let ambitosArray = ambitos.components(separatedBy: ",")
+            let discapacidadesArray = discapacidades.components(separatedBy: ",")
             
+            // Get day from fecha
+            let dia = getDia(fecha: fecha)
+            
+            // Create event object of type Evento
+            let event = Evento(nombre: nombreEvento, participantes: participantes, tipo: tipoEvento, lugar: lugar, fecha: fecha, hora: horario, ambitos: ambitosArray, tiposDiscapacidad: discapacidadesArray, dia: dia)
+            
+            // Update events array
+            events.append(event)
+            eventCounter = eventCounter + 1
+            
+            // Log it, printing last element of array
+            print("Event (" + String(eventCounter) + ") created locally: ")
+            print(events[eventCounter-1])
             
         }
         
