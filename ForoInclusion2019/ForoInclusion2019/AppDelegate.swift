@@ -18,11 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Receives events dictionary and stores it in global var
     func saveEventsToVariable( tmpEvents: NSDictionary ) {
         
-        for event in tmpEvents {
-            // TO-DO
-            // Sacar cada variable del evento y enviarlo al constructor, como se especifica en clase Evento
-            print("TEST")
-            print(event)
+        let eventKeys = tmpEvents.allKeys as! [String]
+        
+        for key in eventKeys {
+            
+            let notProcessedEvent = tmpEvents[key] as! NSDictionary
+            
+            let ambito = notProcessedEvent["ambito"] as? String ?? ""
+            let discapacidad = notProcessedEvent["discapacidad"] as? String ?? ""
+            let nombreEvento = notProcessedEvent["evento"] as? String ?? ""
+            let fecha = notProcessedEvent["fecha"] as? String ?? ""
+            let horario = notProcessedEvent["horario"] as? String ?? ""
+            let lugar = notProcessedEvent["lugar"] as? String ?? ""
+            let participantes = notProcessedEvent["participantes"] as? String ?? ""
+            let tipoEventos = notProcessedEvent["tipoEventos"] as? String ?? ""
+            
+            print(ambito, discapacidad, nombreEvento, fecha, horario, lugar, participantes, tipoEventos)
+            
             
         }
         
@@ -44,7 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // Get events
             let events = snapshot.value as? NSDictionary
-            print("Events dictionary: ")
             print(events ?? "")
             
             // Store them in variable, aborts execution if events is nil (! at the end and self. does that)
