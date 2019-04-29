@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var events = [Evento]()
     
+    var dataIsLoaded = false
+    
     // Function that returns day number of given date separated by "-"
     func getDia(fecha: String) -> Int {
     
@@ -69,6 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(events[eventCounter-1])
             
         }
+        
+        dataIsLoaded = true
         
     }
     
