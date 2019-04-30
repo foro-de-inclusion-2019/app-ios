@@ -70,8 +70,10 @@ class ViewController: UIViewController, cambiaFavorito {
         evento3.hora = "14:30"
         evento3.ambitos.append(Ambito.Escolar)
         
-        eventos = [evento1, evento2, evento3]
-        favoritos = [evento1]
+        eventos.append(evento1)
+        eventos.append(evento2)
+        eventos.append(evento3)
+        favoritos.append(evento1)
     }
     
     // MARK: - Protocol cambiaFavorito
@@ -178,10 +180,10 @@ class ViewController: UIViewController, cambiaFavorito {
             let discapacidadesArray = discapacidades.components(separatedBy: ",")
             
             // Get day from fecha
-            let dia = getDia(fecha: fecha)
+            // let dia = getDia(fecha: fecha)
             
             // Create event object of type Evento
-            let event = Evento(nombre: nombreEvento, participantes: participantes, tipo: tipoEvento, lugar: lugar, fecha: fecha, hora: horario, ambitos: ambitosArray, tiposDiscapacidad: discapacidadesArray, dia: dia)
+            let event = Evento(nombre: nombreEvento, participantes: participantes, tipo: tipoEvento, lugar: lugar, fecha: fecha, hora: horario, ambitos: ambitosArray, tiposDiscapacidad: discapacidadesArray, dia: -1)
             
             // Update events array
             eventos.append(event)
@@ -193,6 +195,8 @@ class ViewController: UIViewController, cambiaFavorito {
             
         }
         
+        print("EVENTS LOADED: ", eventCounter)
+        
         dataIsLoaded = true
         
     }
@@ -200,6 +204,11 @@ class ViewController: UIViewController, cambiaFavorito {
     
     // Access db reference to retrieve events
     func fetchEvents() {
+        
+        // If data is loaded already, return
+        if( dataIsLoaded ) {
+            return
+        }
         
         // Get database reference
         db = Database.database().reference()
