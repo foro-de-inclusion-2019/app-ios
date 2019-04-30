@@ -27,45 +27,7 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     
     var delegado: cambiaFavorito!
     
-    
-    //Alguien debería refactorear esto ;D
-    func getNumberMonth(Month: String)->Int{
-        /*
-            Enero, feb, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre
-         */
-        let mm = Month.lowercased()
-        switch mm {
-        case "enero":
-            return 1
-        case "febrero":
-            return 2
-        case "marzo":
-            return 3
-        case "abril":
-            return 4
-        case "mayo":
-            return 5
-        case "junio":
-            return 6
-        case "julio":
-            return 7
-        case "agosto":
-            return 8
-        case "septiembre":
-            return 9
-        case "octubre":
-            return 10
-        case "noviembre":
-            return 11
-        case "diciembre":
-            return 12
-        default:
-            //???
-            //Enero I guess
-            return 1
-        }
-    }
-    
+
     func getDate(ev: Evento)->String{
         ev.fecha = String(ev.fecha.map{ ($0 == "-" ? "/" : $0) })
         return ev.fecha
@@ -114,24 +76,60 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
+    
+    
+    func storeData(){
+        
+        do{
+        let data = try PropertyListEncoder().encode(eventos)
+        let favs = try PropertyListEncoder().encode(favoritos)
+        try data.write(to: Evento.eventosPath)
+        try favs.write(to: Evento.favoritosPath)
+        }
+        catch{
+            print("Save failed")
+        }
+    }
+    
+    
+    func retrieveEventos() -> [Evento]? {
+        do {
+            let data = try Data.init(contentsOf: Evento.eventosPath)
+            let Ev = try PropertyListDecoder().decode([Evento].self, from: data)
+            return Ev
+        } catch {
+            return nil
+        }
+    }
+    
+    
+    func retrieveFavoritos() -> [Evento]? {
+        do {
+            let data = try Data.init(contentsOf: Evento.favoritosPath)
+            let ev = try PropertyListDecoder().decode([Evento].self, from: data)
+            return ev
+        } catch {
+            return nil
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dia = 0
         
-        
-        if isfav {
-//            //Traer favoritos desde el document
-//            let documentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-//            let archiveURL = documentsDirectory.appendingPathComponent("Favoritos")
-//
-//            do{
-//                let data = try Data.init(contentsOf: archiveURL)
-//                let empTmp = try
-//                    PropertyListDecoder().decode([Evento].self, from: data)
-//
-//            }catch {
-//                
-//            }
+        if eventos.count == 0{
+            //Try to load from file
+            if let ev = retrieveEventos() {
+                eventos = ev
+            }
+            
+            if let ev = retrieveFavoritos(){
+                favoritos = ev
+            }
+            
+        }else{
+            //update file :D
+            storeData()
         }
         
         
