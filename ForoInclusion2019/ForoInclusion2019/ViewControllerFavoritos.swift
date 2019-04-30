@@ -103,7 +103,8 @@ class ViewControllerFavoritos: UIViewController, UITableViewDataSource, UITableV
         
         
         let formater = DateFormatter()
-        formater.dateFormat = "MM/dd/yyyy"
+        //2019-04-26
+        formater.dateFormat = "yyyy/MM/dd"
         for ev in favoritos {
             allFechas.append(formater.date(from: getDate(ev: ev))!)
         }
