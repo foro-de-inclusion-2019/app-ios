@@ -13,33 +13,36 @@ import Firebase
 
 class ViewController: UIViewController, cambiaFavorito {
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate  // GEt reference to app delegate
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate  // Get reference to app delegate
     
     let monitor = NWPathMonitor()                   // Monitors if using (wifi, ethernet, lo0, etc)
     let queue = DispatchQueue(label: "Monitor")     // Queue used to run monitor
+    var db : DatabaseReference?                     // Database reference
+    var dataIsLoaded = false                        // Verifies if data from db finished loading
+    var hasWifi = false;                            // Verfifies if device has internet connection
     
-    var hasWifi = false;
-    
-    var eventos: [Evento]!
-    var favoritos: [Evento]!
+    var eventos = [Evento]()
+    var favoritos = [Evento]()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // get database reference from app delegate
+        db = appDelegate.db
+        
+        // fetch events from db
+        fetchEvents()
+        
         // load monitor to queue
         monitor.start(queue: queue)
         
-        // get events loaded from db
-        eventos = appDelegate.events
-        print("events size: ")
-        print("events size: ")
-        print("events size: ")
-        print("events size: ")
-        print(eventos.count)
-        print(appDelegate.events.count)
-        
-        // Temporalmente llenar los arreglos eventos y favoritos con datos dummy
+    }
+    
+    
+    
+    // Temporalmente llenar los arreglos eventos y favoritos con datos dummy
+    func fillDummyEvents() {
         let evento1 = Evento()
         evento1.nombre = "La platica muy importante"
         evento1.participantes = "Juan Perez, Martha Sanchez"
@@ -102,7 +105,7 @@ class ViewController: UIViewController, cambiaFavorito {
     }
     
     
-    // MARK: - Database Access
+    // MARK: - Wifi Detection
     override func viewWillAppear(_ animated: Bool) {
         
         // Connection detector closure
@@ -128,6 +131,100 @@ class ViewController: UIViewController, cambiaFavorito {
         }
         
     }
+    
+    
+    
+    
+    // MARK: - Database Stuff
+    
+    
+    // Function that returns day number of given date separated by "-"
+    func getDia(fecha: String) -> Int {
+        
+        if( fecha.isEmpty ) {
+            return 0;
+        }
+        
+        let arrayFechaNumbers = fecha.components(separatedBy: "-")
+        let dia = Int(arrayFechaNumbers[1]) ?? 0
+        
+        return dia
+        
+    }
+    
+    // Receives events dictionary and stores it in global var
+    func saveEventsToVariable( tmpEvents: NSDictionary ) {
+        
+        let eventKeys = tmpEvents.allKeys as! [String]
+        var eventCounter = 0
+        
+        for key in eventKeys {
+            
+            let notProcessedEvent = tmpEvents[key] as! NSDictionary
+            
+            // Get response elements
+            let ambitos = notProcessedEvent["ambito"] as? String ?? ""
+            let discapacidades = notProcessedEvent["discapacidad"] as? String ?? ""
+            let nombreEvento = notProcessedEvent["evento"] as? String ?? ""
+            let fecha = notProcessedEvent["fecha"] as? String ?? ""
+            let horario = notProcessedEvent["horario"] as? String ?? ""
+            let lugar = notProcessedEvent["lugar"] as? String ?? ""
+            let participantes = notProcessedEvent["participantes"] as? String ?? ""
+            let tipoEvento = notProcessedEvent["tipoEventos"] as? String ?? ""
+            
+            // OJO, aqui checar si estará separado por "comma" o por "comma + espacio"
+            // Get special arrays
+            let ambitosArray = ambitos.components(separatedBy: ",")
+            let discapacidadesArray = discapacidades.components(separatedBy: ",")
+            
+            // Get day from fecha
+            let dia = getDia(fecha: fecha)
+            
+            // Create event object of type Evento
+            let event = Evento(nombre: nombreEvento, participantes: participantes, tipo: tipoEvento, lugar: lugar, fecha: fecha, hora: horario, ambitos: ambitosArray, tiposDiscapacidad: discapacidadesArray, dia: dia)
+            
+            // Update events array
+            eventos.append(event)
+            eventCounter = eventCounter + 1
+            
+            // Log it, printing last element of array
+            print("Event (" + String(eventCounter) + ") created locally: ")
+            print(eventos[eventCounter-1])
+            
+        }
+        
+        dataIsLoaded = true
+        
+    }
+    
+    
+    // Access db reference to retrieve events
+    func fetchEvents() {
+        
+        // Get database reference
+        db = Database.database().reference()
+        
+        print("DB REFERENCE: ")
+        print(db ?? "")
+        
+        // Access database events from db reference
+        db?.child("eventos").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            // Get events
+            let events = snapshot.value as? NSDictionary
+            print(events ?? "")
+            
+            // Store them in variable, aborts execution if events is nil (! at the end and self. does that)
+            self.saveEventsToVariable(tmpEvents: events!)
+            
+        }) { (error) in // Catch error, and print it
+            
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    
     
     
     

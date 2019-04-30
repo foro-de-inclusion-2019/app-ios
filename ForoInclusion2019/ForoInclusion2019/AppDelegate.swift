@@ -13,95 +13,17 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var events = [Evento]()
     
-    var dataIsLoaded = false
-    
-    // Function that returns day number of given date separated by "-"
-    func getDia(fecha: String) -> Int {
-    
-        if( fecha.isEmpty ) {
-            return 0;
-        }
-        
-        let arrayFechaNumbers = fecha.components(separatedBy: "-")
-        let dia = Int(arrayFechaNumbers[1]) ?? 0
-        
-        return dia
-        
-    }
-
-    // Receives events dictionary and stores it in global var
-    func saveEventsToVariable( tmpEvents: NSDictionary ) {
-        
-        let eventKeys = tmpEvents.allKeys as! [String]
-        var eventCounter = 0
-        
-        for key in eventKeys {
-            
-            let notProcessedEvent = tmpEvents[key] as! NSDictionary
-            
-            // Get response elements
-            let ambitos = notProcessedEvent["ambito"] as? String ?? ""
-            let discapacidades = notProcessedEvent["discapacidad"] as? String ?? ""
-            let nombreEvento = notProcessedEvent["evento"] as? String ?? ""
-            let fecha = notProcessedEvent["fecha"] as? String ?? ""
-            let horario = notProcessedEvent["horario"] as? String ?? ""
-            let lugar = notProcessedEvent["lugar"] as? String ?? ""
-            let participantes = notProcessedEvent["participantes"] as? String ?? ""
-            let tipoEvento = notProcessedEvent["tipoEventos"] as? String ?? ""
-            
-            // OJO, aqui checar si estará separado por "comma" o por "comma + espacio"
-            // Get special arrays
-            let ambitosArray = ambitos.components(separatedBy: ",")
-            let discapacidadesArray = discapacidades.components(separatedBy: ",")
-            
-            // Get day from fecha
-            let dia = getDia(fecha: fecha)
-            
-            // Create event object of type Evento
-            let event = Evento(nombre: nombreEvento, participantes: participantes, tipo: tipoEvento, lugar: lugar, fecha: fecha, hora: horario, ambitos: ambitosArray, tiposDiscapacidad: discapacidadesArray, dia: dia)
-            
-            // Update events array
-            events.append(event)
-            eventCounter = eventCounter + 1
-            
-            // Log it, printing last element of array
-            print("Event (" + String(eventCounter) + ") created locally: ")
-            print(events[eventCounter-1])
-            
-        }
-        
-        dataIsLoaded = true
-        
-    }
+    var db : DatabaseReference?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Db config file
         FirebaseApp.configure()
         
         // Get database reference
-        let db = Database.database().reference()
-        
-        print("DB REFERENCE: ")
-        print(db)
-        
-        // Access database events from db reference
-        db.child("eventos").observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            // Get events
-            let events = snapshot.value as? NSDictionary
-            print(events ?? "")
-            
-            // Store them in variable, aborts execution if events is nil (! at the end and self. does that)
-            self.saveEventsToVariable(tmpEvents: events!)
-            
-        }) { (error) in // Catch error, and print it
-            
-            print(error.localizedDescription)
-        }
-        
+        db = Database.database().reference()
         
         return true
     }
