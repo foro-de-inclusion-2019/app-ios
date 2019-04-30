@@ -32,7 +32,7 @@ class ViewController: UIViewController, cambiaFavorito {
         db = appDelegate.db
         
         // fetch events from db
-        fetchEvents()
+     //   fetchEvents()
         
         // load monitor to queue
         monitor.start(queue: queue)

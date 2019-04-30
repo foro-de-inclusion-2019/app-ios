@@ -117,7 +117,7 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         dia = 0
         
-        if eventos.count == 0{
+        if eventos.count == 0 {
             //Try to load from file
             if let ev = retrieveEventos() {
                 eventos = ev
@@ -132,6 +132,9 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
             storeData()
         }
         
+        if isfav {
+            eventos = favoritos
+        }
         
         calculateDays()
         filtrar(day: dia)
