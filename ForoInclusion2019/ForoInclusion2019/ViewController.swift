@@ -48,7 +48,7 @@ class ViewController: UIViewController, cambiaFavorito {
         evento1.fecha = "2019/04/22"
         evento1.hora = "12:30"
         evento1.ambitos.append(Ambito.Salud)
-        
+
         let evento2 = Evento()
         evento2.nombre = "El panel de panelistas panelosos"
         evento2.participantes = "Juan Perez, Martha Sanchez"
@@ -57,7 +57,7 @@ class ViewController: UIViewController, cambiaFavorito {
         evento2.fecha = "2019/04/21"
         evento2.hora = "14:30"
         evento2.ambitos.append(Ambito.Escolar)
-        
+
         let evento3 = Evento()
         evento3.nombre = "Panel"
         evento3.participantes = "Samuel Pacheco"
@@ -66,7 +66,7 @@ class ViewController: UIViewController, cambiaFavorito {
         evento3.fecha = "2019/04/23"
         evento3.hora = "14:30"
         evento3.ambitos.append(Ambito.Escolar)
-        
+
         eventos = [evento1, evento2, evento3]
         favoritos = [evento1]
     }
