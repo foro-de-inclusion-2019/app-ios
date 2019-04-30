@@ -7,14 +7,37 @@
 //
 
 import UIKit
+import Network
+import Firebase
+
 
 class ViewController: UIViewController, cambiaFavorito {
-
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate  // GEt reference to app delegate
+    
+    let monitor = NWPathMonitor()                   // Monitors if using (wifi, ethernet, lo0, etc)
+    let queue = DispatchQueue(label: "Monitor")     // Queue used to run monitor
+    
+    var hasWifi = false;
+    
     var eventos: [Evento]!
     var favoritos: [Evento]!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // load monitor to queue
+        monitor.start(queue: queue)
+        
+        // get events loaded from db
+        eventos = appDelegate.events
+        print("events size: ")
+        print("events size: ")
+        print("events size: ")
+        print("events size: ")
+        print(eventos.count)
+        print(appDelegate.events.count)
         
         // Temporalmente llenar los arreglos eventos y favoritos con datos dummy
         let evento1 = Evento()
@@ -77,6 +100,36 @@ class ViewController: UIViewController, cambiaFavorito {
             //vistaEventos.isfav = false
         }
     }
+    
+    
+    // MARK: - Database Access
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // Connection detector closure
+        monitor.pathUpdateHandler = { path in
+            
+            if(path.status == .satisfied) { //Detects connection
+                
+                if( path.isExpensive ) {
+                    print("Cellular data is ON.")
+                } else {
+                    print("INTERNET is ON.")
+                }
+                
+                self.hasWifi = true;
+                
+            } else { // No connection detected
+                print("INTERNET is OFF.")
+                
+                self.hasWifi = false;
+                
+            }
+            
+        }
+        
+    }
+    
+    
     
     // MARK: - Accesibility
     
