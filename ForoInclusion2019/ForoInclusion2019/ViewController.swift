@@ -17,35 +17,37 @@ class ViewController: UIViewController, cambiaFavorito {
         super.viewDidLoad()
         
         // Temporalmente llenar los arreglos eventos y favoritos con datos dummy
-        let evento1 = Evento()
-        evento1.nombre = "La platica muy importante"
-        evento1.participantes = "Juan Perez, Martha Sanchez"
-        evento1.tipo = "Conferencia"
-        evento1.lugar = "Centro de congresos, sala 2"
-        evento1.fecha = "2019/04/22"
-        evento1.hora = "12:30"
-        evento1.ambitos.append(Ambito.Salud)
-        
-        let evento2 = Evento()
-        evento2.nombre = "El panel de panelistas panelosos"
-        evento2.participantes = "Juan Perez, Martha Sanchez"
-        evento2.tipo = "Panel"
-        evento2.lugar = "Centro de congresos, sala 3"
-        evento2.fecha = "2019/04/21"
-        evento2.hora = "14:30"
-        evento2.ambitos.append(Ambito.Escolar)
-        
-        let evento3 = Evento()
-        evento3.nombre = "Panel"
-        evento3.participantes = "Samuel Pacheco"
-        evento3.tipo = "Panel"
-        evento3.lugar = "Centro de congresos, sala 3"
-        evento3.fecha = "2019/04/23"
-        evento3.hora = "14:30"
-        evento3.ambitos.append(Ambito.Escolar)
-        
-        eventos = [evento1, evento2, evento3]
-        favoritos = [evento1]
+//        let evento1 = Evento()
+//        evento1.nombre = "La platica muy importante"
+//        evento1.participantes = "Juan Perez, Martha Sanchez"
+//        evento1.tipo = "Conferencia"
+//        evento1.lugar = "Centro de congresos, sala 2"
+//        evento1.fecha = "2019/04/22"
+//        evento1.hora = "12:30"
+//        evento1.ambitos.append(Ambito.Salud)
+//
+//        let evento2 = Evento()
+//        evento2.nombre = "El panel de panelistas panelosos"
+//        evento2.participantes = "Juan Perez, Martha Sanchez"
+//        evento2.tipo = "Panel"
+//        evento2.lugar = "Centro de congresos, sala 3"
+//        evento2.fecha = "2019/04/21"
+//        evento2.hora = "14:30"
+//        evento2.ambitos.append(Ambito.Escolar)
+//
+//        let evento3 = Evento()
+//        evento3.nombre = "Panel"
+//        evento3.participantes = "Samuel Pacheco"
+//        evento3.tipo = "Panel"
+//        evento3.lugar = "Centro de congresos, sala 3"
+//        evento3.fecha = "2019/04/23"
+//        evento3.hora = "14:30"
+//        evento3.ambitos.append(Ambito.Escolar)
+//
+//        eventos = [evento1, evento2, evento3]
+//        favoritos = [evento1]
+        eventos = []
+        favoritos = []
     }
     
     // MARK: - Protocol cambiaFavorito
