@@ -28,14 +28,14 @@ class ViewController: UIViewController, cambiaFavorito {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // load monitor to queue
+        monitor.start(queue: queue)
+        
         // get database reference from app delegate
         db = appDelegate.db
         
         // fetch events from db
         fetchEvents()
-        
-        // load monitor to queue
-        monitor.start(queue: queue)
         
     }
     
@@ -206,7 +206,7 @@ class ViewController: UIViewController, cambiaFavorito {
     func fetchEvents() {
         
         // If data is loaded already OR user has no internet, return
-        if( dataIsLoaded || !hasWifi ) {
+        if( dataIsLoaded ) {
             return
         }
         
