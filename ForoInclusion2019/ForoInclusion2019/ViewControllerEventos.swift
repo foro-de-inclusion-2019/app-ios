@@ -67,13 +67,8 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func getDate(ev: Evento)->String{
-        
-        var fecha =  ev.fecha.split{$0 == " "}.map(String.init)
-        var currentDate = String(getNumberMonth(Month: fecha[2]))
-        currentDate+="/"+fecha[0]+"/"
-        currentDate += String(Calendar.current.component(.year, from: Date()))
-        
-        return currentDate
+        ev.fecha = String(ev.fecha.map{ ($0 == "-" ? "/" : $0) })
+        return ev.fecha
     }
     
     func calculateDays(){
@@ -84,7 +79,8 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         
         
         let formater = DateFormatter()
-        formater.dateFormat = "MM/dd/yyyy"
+            //2019-04-26
+        formater.dateFormat = "yyyy/MM/dd"
         for ev in eventos {
                 allFechas.append(formater.date(from: getDate(ev: ev))!)
         }
