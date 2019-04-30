@@ -205,8 +205,8 @@ class ViewController: UIViewController, cambiaFavorito {
     // Access db reference to retrieve events
     func fetchEvents() {
         
-        // If data is loaded already, return
-        if( dataIsLoaded ) {
+        // If data is loaded already OR user has no internet, return
+        if( dataIsLoaded || !hasWifi ) {
             return
         }
         
