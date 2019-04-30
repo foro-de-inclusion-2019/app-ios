@@ -62,6 +62,7 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         }
         
         allFechas = auxFechas
+        allFechas.sort()
         for ev in eventos{
             if ev.dia == -1 {
                 for i in 0..<allFechas.count{
@@ -145,15 +146,19 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     
     func filtrar(day: Int) {
         eventosFiltrados = [Evento]()
+        
+        
+        
+        
         for evento in eventos {
             for ambito in evento.ambitos {
-                if filtroAmbito.contains(ambito) {
+                if filtroAmbito.contains(ambito) && !eventosFiltrados.contains(evento){
                     eventosFiltrados.append(evento)
                     break
                 }
             }
             for tipo in evento.tiposDiscapacidad {
-                if filtroTipo.contains(tipo) {
+                if filtroTipo.contains(tipo) && !eventosFiltrados.contains(evento){
                     eventosFiltrados.append(evento)
                     break
                 }
