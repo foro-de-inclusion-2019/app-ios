@@ -12,7 +12,7 @@ enum Ambito : String, CaseIterable, Codable {
     case Social = "Social"
     case Laboral = "Laboral"
     case Salud = "Salud"
-    case Escolar = "Escolar"
+    case Escolar = "Estudiantil"
 }
 
 enum TipoDiscapacidad : String, CaseIterable, Codable {
@@ -104,11 +104,15 @@ class Evento: NSObject, Codable{
         self.dia = dia
         
         for ambito in ambitos {
-            self.ambitos.append(Ambito(rawValue: ambito)!)
+            if let amb = Ambito(rawValue: ambito){
+                self.ambitos.append(amb)
+            }
         }
         
         for tipo in tiposDiscapacidad {
-            self.tiposDiscapacidad.append(TipoDiscapacidad(rawValue: tipo)!)
+            if let disc = TipoDiscapacidad(rawValue: tipo){
+                self.tiposDiscapacidad.append(disc)
+            }
         }
     }
     

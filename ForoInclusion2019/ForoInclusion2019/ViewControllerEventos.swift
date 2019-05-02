@@ -67,7 +67,7 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
             if ev.dia == -1 {
                 for i in 0..<allFechas.count{
                     if formater.date(from: getDate(ev: ev)) == allFechas[i] {
-                        ev.dia = i
+                        ev.dia = min(i, 3)
                         break;
                     }
                 }
@@ -141,7 +141,10 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         
     }
         //Empiezan en el evento 0 (Dia 1)
-    
+
+    override func viewWillDisappear(_ animated: Bool) {
+        storeData()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         tablaEventos.reloadData()
