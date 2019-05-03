@@ -14,31 +14,23 @@ protocol actualizaFiltros {
 
 class TableViewControllerFiltros: UITableViewController {
     
-    let alertaFiltros = UIAlertController(title: "No hay filtros", message: "No se seleccionaron filtros", preferredStyle: .alert)
-
     var delegado: actualizaFiltros!
+    
+    var filtroAmbito: [Ambito]!
+    var filtroTipo: [TipoDiscapacidad]!
     
     var ambitos = Ambito.allCases
     var tipos = TipoDiscapacidad.allCases
     
+    var cellHeight : CGFloat = 30
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        let btnAplicar = UIBarButtonItem(title: "Aplicar", style: .done, target: self, action: #selector(actualizar))
-        
-        self.navigationItem.rightBarButtonItem = btnAplicar
-        
-        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertaFiltros.addAction(ok)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 2
     }
     
@@ -53,9 +45,12 @@ class TableViewControllerFiltros: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellHeight + 10.0
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if section == 0 {
             return ambitos.count
         } else {
@@ -67,16 +62,26 @@ class TableViewControllerFiltros: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "celdaFiltro", for: indexPath) as! TableViewCellFiltro
 
         if indexPath.section == 0 {
-            cell.tfFiltro.text = ambitos[indexPath.row].rawValue
+            let ambito = ambitos[indexPath.row]
+            cell.tfFiltro.text = ambito.rawValue
+            if filtroAmbito.contains(ambito) {
+                cell.doSwitch(on: true)
+            }
         } else {
-            cell.tfFiltro.text = tipos[indexPath.row].rawValue
+            let tipo = tipos[indexPath.row]
+            cell.tfFiltro.text = tipo.rawValue
+            if filtroTipo.contains(tipo) {
+                cell.doSwitch(on: true)
+            }
         }
+        
+        cellHeight = cell.getFontSize()
 
         return cell
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
 
-    @objc func actualizar() {
-        
         ambitos = [Ambito]()
         tipos = [TipoDiscapacidad]()
         
@@ -98,59 +103,9 @@ class TableViewControllerFiltros: UITableViewController {
             }
         }
         
-        if ambitos.isEmpty && tipos.isEmpty {
-            present(alertaFiltros, animated: true, completion: nil)
-            return
-        }
-        
         delegado.actualizarFiltros(ambitos: ambitos, tipos: tipos)
         
-        navigationController?.popViewController(animated: true)
+        super.viewDidDisappear(true)
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

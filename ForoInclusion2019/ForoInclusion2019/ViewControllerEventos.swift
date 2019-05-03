@@ -10,6 +10,8 @@ import UIKit
 
 class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableViewDelegate, actualizaFiltros, cambiaFavorito {
     
+    let alertaFiltros = UIAlertController(title: "No hay filtros", message: "No se muestran eventos porque no se seleccionaron filtros", preferredStyle: .alert)
+    
     @IBOutlet weak var tablaEventos: UITableView!
     @IBOutlet weak var dias_filtro: UISegmentedControl!
     
@@ -27,7 +29,38 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     
     var delegado: cambiaFavorito!
     
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dia = 0
+        
+        if eventos.count == 0 {
+            //Try to load from file
+            if let ev = retrieveEventos() {
+                eventos = ev
+            }
+            
+            if let ev = retrieveFavoritos(){
+                favoritos = ev
+            }
+            
+        }else{
+            //update file :D
+            storeData()
+        }
+        
+        if isfav {
+            eventos = favoritos
+        }
+        
+        calculateDays()
+        filtrar(day: dia)
+        
+        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertaFiltros.addAction(ok)
+        
+    }
+    //Empiezan en el evento 0 (Dia 1)
+    
     func getDate(ev: Evento)->String{
         ev.fecha = String(ev.fecha.map{ ($0 == "-" ? "/" : $0) })
         return ev.fecha
@@ -77,7 +110,6 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     }
     
     
-    
     func storeData(){
         
         do{
@@ -112,35 +144,6 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
             return nil
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        dia = 0
-        
-        if eventos.count == 0 {
-            //Try to load from file
-            if let ev = retrieveEventos() {
-                eventos = ev
-            }
-            
-            if let ev = retrieveFavoritos(){
-                favoritos = ev
-            }
-            
-        }else{
-            //update file :D
-            storeData()
-        }
-        
-        if isfav {
-            eventos = favoritos
-        }
-        
-        calculateDays()
-        filtrar(day: dia)
-        
-    }
-        //Empiezan en el evento 0 (Dia 1)
 
     override func viewWillDisappear(_ animated: Bool) {
         storeData()
@@ -152,9 +155,6 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     
     func filtrar(day: Int) {
         eventosFiltrados = [Evento]()
-        
-        
-        
         
         for evento in eventos {
             for ambito in evento.ambitos {
@@ -186,7 +186,8 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellHeight * 10.0
+        return cellHeight * 10
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -209,6 +210,10 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         filtroTipo = tipos
         filtrar(day: dia)
         tablaEventos.reloadData()
+        
+        if ambitos.isEmpty && tipos.isEmpty {
+            present(alertaFiltros, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Protocol cambiaFavorito
@@ -232,9 +237,6 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
             self.filtrar(day: self.dia)
         }
     }
-
-
-    
     
     @IBAction func filtroDia(_ sender: UISegmentedControl) {
         dia = sender.selectedSegmentIndex
@@ -246,6 +248,8 @@ class ViewControllerEventos: UIViewController, UITableViewDataSource, UITableVie
         if segue.identifier == "filtros" {
             let vistaFiltros = segue.destination as! TableViewControllerFiltros
             vistaFiltros.delegado = self
+            vistaFiltros.filtroAmbito = filtroAmbito
+            vistaFiltros.filtroTipo = filtroTipo
         } else {
             let cell = sender as! TableViewCellEvento
             let vistaDetalle = segue.destination as! ViewControllerDetalleEvento
